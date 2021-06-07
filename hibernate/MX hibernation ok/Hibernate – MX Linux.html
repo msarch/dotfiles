@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class=" bizeokem idc0_326" style="height: 100%;" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<title>Hibernate – MX Linux</title>
+<script type="text/javascript" async="" src="Hibernate%20%E2%80%93%20MX%20Linux_files/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-K2LYnZEtBUcW6O6eiKyrX5HgXfaBzWmW7BmI0mEp+JFPi3pZyyiJwjMDjI12BtQg"></script><script type="text/javascript">
+var tip_jar_wp_editing_strings = {"edit":"Edit","view":"View","remove":"Remove","choose_image":"Choose image","select_an_item_for_upload":"Select an item","use_uploaded_item":"Use item","choose_file_to_be_delivered":"Choose the file to be delievered to the user","enable_file_download_mode":"Enable File Download Mode","disable_file_download_mode":"Disable File Download Mode","deliverable_file_title":"Deliverable File","deliverable_file_description":"This file will be given to the user after they pay (or enter $0):","require_users_email_title":"Require User's Email?","require_users_email_description":"Do you want to require the user to enter their email to get this file?","email_required":"Email required","email_not_required":"Email not required","instructions_to_user_title":"Instructions to user","instructions_to_user_description":"This is what the user will see above the download button. Use it to give them instructions, or just say \"thanks\" for downloading.","instructions_title":"Instructions Title","instructions_description":"Instructions Description","file_download_mode_description":"File Download Mode allows you to give the user a file after they pay. Leave this disabled for a normal tip form.","tip_forms_display_style":"Tip Form's Display Style","how_should_the_tip_form_display":"How should the Tip Form display?","embed_in_place":"Embed in-place","start_as_a_button":"Start as a button","start_as_a_text_link":"Start as a text link","with_the_text":"with the text","which":"which","opens_in_place":"opens in-place","opens_in_modal":"opens in modal (pop-up)","when_clicked":"when clicked.","enable_recurring_options":"Enable recurring options? (Currently disabled)","disable_recurring_options":"Disable recurring options","agreement_text":"Agreement text","view_terms_button_text":"\"View Terms\" button text","terms_and_conditions_title":"Terms and Conditions Title","terms_and_conditions_body":"Terms and Conditions Body (leave this blank to hide on front-end)","optional_subtitle_here":"Optional subtitle here.","optional_title_here":"Optional title here.","optional_header_media_here":"\"Optional place to display audio or video.\"","insert_shortcode_area_title":"When you're ready, insert the shortcode.","insert_shortcode":"Insert Shortcode","update_shortcode":"Update Shortcode","cancel_shortcode":"Cancel","media_above_payment_form":"Set the media to show above payment form","description_top_media_type":"What would you like to show above the payment form?"};
+</script>
+<link rel="dns-prefetch" href="https://js.stripe.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="MX Linux » Feed" href="https://mxlinux.org/feed/">
+<link rel="alternate" type="application/rss+xml" title="MX Linux » Comments Feed" href="https://mxlinux.org/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="MX Linux » Hibernate Comments Feed" href="https://mxlinux.org/wiki/system/hibernate/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/mxlinux.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
+!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="Hibernate%20%E2%80%93%20MX%20Linux_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+<style>
+img.wp-smiley,
+img.emoji {
+display: inline !important;
+border: none !important;
+box-shadow: none !important;
+height: 1em !important;
+width: 1em !important;
+margin: 0 .07em !important;
+vertical-align: -0.1em !important;
+background: none !important;
+padding: 0 !important;
+}
+</style>
+<!-- <link rel='stylesheet' id='gtranslate-style-css'  href='https://mxlinux.org/wp-content/plugins/gtranslate/gtranslate-style24.css?ver=5.5.3' media='all' /> -->
+<!-- <link rel='stylesheet' id='sdm-styles-css'  href='https://mxlinux.org/wp-content/plugins/simple-download-monitor/css/sdm_wp_styles.css?ver=5.5.3' media='all' /> -->
+<!-- <link rel='stylesheet' id='wp-block-library-css'  href='https://mxlinux.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' media='all' /> -->
+<!-- <link rel='stylesheet' id='slick-css'  href='https://mxlinux.org/wp-content/plugins/getwid/vendors/slick/slick/slick.min.css?ver=1.9.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='slick-theme-css'  href='https://mxlinux.org/wp-content/plugins/getwid/vendors/slick/slick/slick-theme.min.css?ver=1.9.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='getwid-blocks-css'  href='https://mxlinux.org/wp-content/plugins/getwid/assets/css/blocks.style.css?ver=1.6.7' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/64vby.css" media="all">
+<style id="getwid-blocks-inline-css">
+.wp-block-getwid-section .wp-block-getwid-section__wrapper .wp-block-getwid-section__inner-wrapper{max-width: 900px;}
+</style>
+<!-- <link rel='stylesheet' id='pdfprnt_frontend-css'  href='https://mxlinux.org/wp-content/plugins/pdf-print/css/frontend.css?ver=2.2.3' media='all' /> -->
+<!-- <link rel='stylesheet' id='wp-show-posts-css'  href='https://mxlinux.org/wp-content/plugins/wp-show-posts/css/wp-show-posts-min.css?ver=1.1.3' media='all' /> -->
+<!-- <link rel='stylesheet' id='tip_jar_wp_default_skin-css'  href='https://mxlinux.org/wp-content/plugins/tip-jar-wp/includes/frontend/css/build/tip-jar-wp.css?ver=1.0.2.8' media='all' /> -->
+<!-- <link rel='stylesheet' id='tip_jar_wp_flags-css'  href='https://mxlinux.org/wp-content/plugins/tip-jar-wp/assets/images/flags/flags.min.css?ver=1.0.2.8' media='all' /> -->
+<!-- <link rel='stylesheet' id='generate-style-grid-css'  href='https://mxlinux.org/wp-content/themes/generatepress/assets/css/unsemantic-grid.min.css?ver=3.0.2' media='all' /> -->
+<!-- <link rel='stylesheet' id='generate-style-css'  href='https://mxlinux.org/wp-content/themes/generatepress/assets/css/style.min.css?ver=3.0.2' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/8avl_002.css" media="all">
+<style id="generate-style-inline-css">
+body{background-color:#e6e7e9;color:#3a3a3a;}a{color:#1b6376;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1200px;}.wp-block-group__inner-container{max-width:1200px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:50px;}.generate-back-to-top{font-size:20px;border-radius:3px;position:fixed;bottom:30px;right:30px;line-height:40px;width:40px;text-align:center;z-index:10;transition:opacity 300ms ease-in-out;}body, button, input, select, textarea{font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}body{line-height:1.5;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.5em;}.main-title{font-size:45px;}.main-navigation .main-nav ul ul li a{font-size:14px;}.sidebar .widget, .footer-widgets .widget{font-size:17px;}h1{font-weight:300;font-size:40px;}h2{font-weight:500;font-size:30px;}h3{font-size:20px;}h4{font-size:inherit;}h5{font-size:inherit;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:25px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a{color:#3a3a3a;}.main-title a,.main-title a:hover{color:#222222;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:#222222;}.main-navigation .main-nav ul li a,.menu-toggle, .main-navigation .menu-bar-items{color:#ffffff;}.main-navigation .main-nav ul li:hover > a,.main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:#ffffff;background-color:#3f3f3f;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#ffffff;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#3f3f3f;}.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#3f3f3f;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:#ffffff;background-color:#3f3f3f;}.main-navigation ul ul{background-color:#3f3f3f;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:hover > a,.main-navigation .main-nav ul ul li:focus > a,.main-navigation .main-nav ul ul li.sfHover > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{color:#202020;background-color:#e6e7e9;}.inside-article a,.paging-navigation a,.comments-area a,.page-header a{color:#b22222;}.inside-article a:hover,.paging-navigation a:hover,.comments-area a:hover,.page-header a:hover{color:#1b6376;}.entry-title a{color:#1b6376;}.entry-meta{color:#595959;}.entry-meta a{color:#595959;}.entry-meta a:hover{color:#1e73be;}h1{color:#124250;}h2{color:#1b6376;}.sidebar .widget{background-color:#e6e7e9;}.sidebar .widget a{color:#b22222;}.sidebar .widget a:hover{color:#1b6376;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{color:#e6e7e9;background-color:#124250;}.footer-widgets a{color:#e6e7e9;}.footer-widgets a:hover{color:#c4c4c4;}.footer-widgets .widget-title{color:#e6e7e9;}.site-info{color:#ffffff;background-color:#222222;}.site-info a{color:#ffffff;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#666666;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f3f3f;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:#ffffff;}}.inside-top-bar{padding:10px;}.inside-header{padding:40px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}.site-info{padding:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header, .wp-block-group__inner-container{padding:30px;}.site-info{padding-right:10px;padding-left:10px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.one-container .sidebar .widget{padding:0px;}/* End cached CSS */@media (max-width:768px){.main-navigation .menu-toggle,.main-navigation .mobile-bar-items,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav{display:none;}[class*="nav-float-"] .site-header .inside-header > *{float:none;clear:both;}}
+</style>
+<!-- <link rel='stylesheet' id='generate-mobile-style-css'  href='https://mxlinux.org/wp-content/themes/generatepress/assets/css/mobile.min.css?ver=3.0.2' media='all' /> -->
+<!-- <link rel='stylesheet' id='generate-font-icons-css'  href='https://mxlinux.org/wp-content/themes/generatepress/assets/css/components/font-icons.min.css?ver=3.0.2' media='all' /> -->
+<!-- <link rel='stylesheet' id='generate-child-css'  href='https://mxlinux.org/wp-content/themes/generatepress_child/style.css?ver=1544638485' media='all' /> -->
+<!-- <link rel='stylesheet' id='webarx-css'  href='https://mxlinux.org/wp-content/plugins/webarx/assets/css/public.min.css?ver=2.0.15' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-icons-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.9.1' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-animations-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.0.14' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-frontend-legacy-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.0.14' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-frontend-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.0.14' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/8avl.css" media="all">
+<link rel="stylesheet" id="elementor-post-4844-css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/post-4844.css" media="all">
+<!-- <link rel='stylesheet' id='elementor-pro-css'  href='https://mxlinux.org/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.0.8' media='all' /> -->
+<!-- <link rel='stylesheet' id='font-awesome-5-all-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.0.14' media='all' /> -->
+<!-- <link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.0.14' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-global-css'  href='https://mxlinux.org/wp-content/uploads/elementor/css/global.css?ver=1606571223' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/9ntet.css" media="all">
+<link rel="stylesheet" id="elementor-post-427-css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/post-427.css" media="all">
+<link rel="stylesheet" id="elementor-post-431-css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/post-431.css" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/css.css" media="all">
+<!-- <link rel='stylesheet' id='elementor-icons-shared-0-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.12.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-icons-fa-solid-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.12.0' media='all' /> -->
+<!-- <link rel='stylesheet' id='elementor-icons-fa-brands-css'  href='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.12.0' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="Hibernate%20%E2%80%93%20MX%20Linux_files/64vbx.css" media="all">
+<style id="kt_central_palette_gutenberg_css" type="text/css">.has-central-palette-1-color{color:#202020}.has-central-palette-1-background-color{background-color:#202020}.has-central-palette-2-color{color:#E6E7E9}.has-central-palette-2-background-color{background-color:#E6E7E9}.has-central-palette-3-color{color:#1B6376}.has-central-palette-3-background-color{background-color:#1B6376}.has-central-palette-4-color{color:#124250}.has-central-palette-4-background-color{background-color:#124250}.has-central-palette-1-color{color:#B22222}.has-central-palette-1-background-color{background-color:#B22222}.has-central-palette-2-color{color:#3CB1BF}.has-central-palette-2-background-color{background-color:#3CB1BF}.has-central-palette-3-color{color:#FFFFFF}.has-central-palette-3-background-color{background-color:#FFFFFF}.has-central-palette-4-color{color:#891C1C}.has-central-palette-4-background-color{background-color:#891C1C}.has-central-palette-5-color{color:#5D6976}.has-central-palette-5-background-color{background-color:#5D6976}
+</style>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/5urnt.js" type="text/javascript"></script>
+<!-- <script src='https://mxlinux.org/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script> -->
+<!-- <script src='https://mxlinux.org/wp-content/plugins/pdf-print/js/html2canvas.js?ver=5.5.3' id='html2canvas.js-js'></script> -->
+<!-- <script src='https://mxlinux.org/wp-content/plugins/pdf-print/js/jspdf.js?ver=5.5.3' id='jspdf.js-js'></script> -->
+<script id="pdfprnt_front_script-js-extra">
+var pdfprnt_file_settings = {"margin_left":"15","margin_right":"15","margin_top":"16","margin_bottom":"16","page_size":"A4","file_action":"open","file_name":"Hibernate"};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/64vby_002.js" type="text/javascript"></script>
+<!-- <script src='https://mxlinux.org/wp-content/plugins/pdf-print/js/front-script.js?ver=5.5.3' id='pdfprnt_front_script-js'></script> -->
+<script id="sdm-scripts-js-extra">
+var sdm_ajax_script = {"ajaxurl":"https:\/\/mxlinux.org\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/64vby.js" type="text/javascript"></script>
+<!-- <script src='https://mxlinux.org/wp-content/plugins/simple-download-monitor/js/sdm_wp_scripts.js?ver=5.5.3' id='sdm-scripts-js'></script> -->
+<!-- <script src='https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4' id='wp-polyfill-js'></script> -->
+<script id="wp-polyfill-js-after">
+( 'fetch' in window ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://mxlinux.org/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/64vby_004.js" type="text/javascript"></script>
+<!-- <script src='https://mxlinux.org/wp-includes/js/dist/vendor/react.min.js?ver=16.9.0' id='react-js'></script> -->
+<!-- <script src='https://mxlinux.org/wp-includes/js/dist/vendor/react-dom.min.js?ver=16.9.0' id='react-dom-js'></script> -->
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/a.js" id="stripe_js-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/64vby_003.js" type="text/javascript"></script>
+<!-- <script src='https://mxlinux.org/wp-content/plugins/webarx/assets/js/public.min.js?ver=2.0.15' id='webarx-js'></script> -->
+<!-- <script src='https://mxlinux.org/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.0.14' id='font-awesome-4-shim-js'></script> -->
+<link rel="https://api.w.org/" href="https://mxlinux.org/wp-json/"><link rel="alternate" type="application/json" href="https://mxlinux.org/wp-json/wp/v2/posts/964"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://mxlinux.org/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://mxlinux.org/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="HELP: MX iDevice Mounter" href="https://mxlinux.org/wiki/help-files/help-mx-idevice-mounter/">
+<link rel="next" title="Swap" href="https://mxlinux.org/wiki/system/swap/">
+<link rel="canonical" href="https://mxlinux.org/wiki/system/hibernate/">
+<link rel="shortlink" href="https://mxlinux.org/?p=964">
+<style type="text/css" id="simple-css-output">div .switcher.notranslate {z-index:999999;}footer.entry-meta, .entry-meta {display:none;}#footer-widgets a {font-weight:300;}#footer-widgets .footer-widget-1 a:link {color:#efefef;}#footer-widgets .footer-widget-1a:hover {color: #C5BEBE;}#footer-widgets .footer-widget-3 a:link {color:#efefef;}#footer-widgets .footer-widget-3 a:hover {color:#C5BEBE;}a:link {color:#b22222; font-weight:bold;}a:hover {color:#3cb1bf; }.wp-block-file_button {width:75%;}.wp-block-file .wp-block-file__button {font-size:11px;}div.wpforms-container-full .wpforms-form .wpforms-required-label { color: #ff0000; font-weight: 400; font-size: 1.5em;}.wpforms-form { background-color: #eee; padding: 20px 15px; border: 3px solid #666; border-radius: 20px;}table.wp-block-table td {padding-bottom:2px; padding-top:2px;}table.wp-block-table tr:nth-child(odd) {background: #FFF}.g-recaptcha { transform:scale(0.77); transform-origin:0 0;}#text-9 {border:2px solid #666; border-radius: 20px;padding-top:10px;}.tip-jar-wp-container {border:3px solid #666; border-radius: 15px;padding-top:10px;}.elementor-427 h1.elementor-heading-title a { color:#000000;}#post-5227 p, #post-5179 p, #post-5278 p, #post-5344 p {margin-left: 20px;margin-right:20px;}.gb-grid-wrapper-ed3d5a25, .gb-grid-wrapper-c291c0db, .gb-grid-wrapper-d2a93d73 {border-bottom:1px solid #666;padding-top:10px;margin-bottom:20px;} .gb-grid-wrapper-c291c0db {padding-right:10px;}.wp-block-uagb-marketing-button {margin-bottom:5px;}#post-5227, #post-5278, #post-5344 , #post-5396, #post-5496 {margin-top:-40px;}.uagb-post-grid-byline {margin-right:15px;}a .uagb-button {color: #ffffff;}div.gb-grid-wrapper-646cdf4e, div.gb-grid-wrapper-7540b544 {border-bottom:1px solid #ccc;margin-left:0;margin-bottom:10px;}.wp-block-image figcaption { text-align: center;}</style><meta name="viewport" content="width=device-width, initial-scale=1"><link type="text/css" rel="stylesheet" charset="UTF-8" href="Hibernate%20%E2%80%93%20MX%20Linux_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="Hibernate%20%E2%80%93%20MX%20Linux_files/main_002.js"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="Hibernate%20%E2%80%93%20MX%20Linux_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="Hibernate%20%E2%80%93%20MX%20Linux_files/main_002.js"></script><script type="text/javascript" charset="UTF-8" src="Hibernate%20%E2%80%93%20MX%20Linux_files/element_main.js"></script><script type="text/javascript" charset="UTF-8" src="Hibernate%20%E2%80%93%20MX%20Linux_files/element_main.js"></script></head>
+<body class="post-template-default single single-post postid-964 single-format-standard wp-custom-logo wp-embed-responsive left-sidebar nav-below-header one-container fluid-header active-footer-widgets-3 nav-aligned-left header-aligned-left dropdown-hover elementor-default elementor-template-full-width elementor-kit-4844 elementor-page-431 full-width-content" itemtype="https://schema.org/Blog" itemscope="" data-elementor-device-mode="desktop" style="position: relative; min-height: 100%; top: 0px;">
+<a class="screen-reader-text skip-link" href="#content" title="Skip to content">Skip to content</a>		<div data-elementor-type="header" data-elementor-id="427" class="elementor elementor-427 elementor-location-header" data-elementor-settings="[]">
+<div class="elementor-section-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-3d432a31 elementor-section-height-min-height elementor-section-content-middle elementor-section-full_width elementor-section-items-top elementor-section-height-default" data-id="3d432a31" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-e94003c" data-id="e94003c" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-3b0d59ba elementor-icon-list--layout-inline elementor-mobile-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="3b0d59ba" data-element_type="widget" data-widget_type="icon-list.default">
+<div class="elementor-widget-container">
+<ul class="elementor-icon-list-items elementor-inline-items">
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://forum.mxlinux.org/">						<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">MX Forum</span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://www.antixforum.com/">						<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">antiX Forum</span>
+</a>
+</li>
+<li class="elementor-icon-list-item elementor-inline-item">
+<a href="https://mxlinux.org/donate">						<span class="elementor-icon-list-icon">
+<i class="fa fa-check" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text">Contribute</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-35005b9b" data-id="35005b9b" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-634e7c7 elementor-search-form--skin-full_screen elementor-widget elementor-widget-search-form" data-id="634e7c7" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;full_screen&quot;}" data-widget_type="search-form.default">
+<div class="elementor-widget-container">
+<form class="elementor-search-form" role="search" action="https://mxlinux.org" method="get">
+<div class="elementor-search-form__toggle">
+<i aria-hidden="true" class="fas fa-search"></i>				<span class="elementor-screen-only">Search</span>
+</div>
+<div class="elementor-search-form__container">
+<input placeholder="Search..." class="elementor-search-form__input" type="search" name="s" title="Search">
+<div class="dialog-lightbox-close-button dialog-close-button">
+<i class="eicon-close" aria-hidden="true"></i>
+<span class="elementor-screen-only">Close</span>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5441f24" data-id="5441f24" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-54c5488 elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="54c5488" data-element_type="widget" data-widget_type="social-icons.default">
+<div class="elementor-widget-container">
+<div class="elementor-social-icons-wrapper elementor-grid">
+<div class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-5646027" href="https://www.facebook.com/groups/665300826967101/" target="_blank">
+<span class="elementor-screen-only">Facebook-f</span>
+<i class="fab fa-facebook-f"></i>					</a>
+</div>
+<div class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-mastodon elementor-repeater-item-9a67403" href="https://mastodon.social/@mxlinux" target="_blank">
+<span class="elementor-screen-only">Mastodon</span>
+<i class="fab fa-mastodon"></i>					</a>
+</div>
+<div class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-72bc942" href="https://twitter.com/MX_Linux" target="_blank">
+<span class="elementor-screen-only">Twitter</span>
+<i class="fab fa-twitter"></i>					</a>
+</div>
+<div class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-4b27cd1" href="https://www.youtube.com/channel/UCFWlej2CSKlXW5uE9opXukQ" target="_blank">
+<span class="elementor-screen-only">Youtube</span>
+<i class="fab fa-youtube"></i>					</a>
+</div>
+<div class="elementor-grid-item">
+<a class="elementor-icon elementor-social-icon elementor-social-icon-reddit-alien elementor-repeater-item-6966a01" href="https://www.reddit.com/r/MXLinux/" target="_blank">
+<span class="elementor-screen-only">Reddit-alien</span>
+<i class="fab fa-reddit-alien"></i>					</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-367cc0e4 elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="367cc0e4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-74d608dc" data-id="74d608dc" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<section class="elementor-section elementor-inner-section elementor-element elementor-element-7e013235 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7e013235" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7892da58" data-id="7892da58" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4f62ebef elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="4f62ebef" data-element_type="widget" data-widget_type="theme-site-logo.default">
+<div class="elementor-widget-container">
+<div class="elementor-image">
+<a href="https://mxlinux.org/">
+<img src="Hibernate%20%E2%80%93%20MX%20Linux_files/MX-Menu-icon-pyramids.svg" title="MX-Menu icon pyramids" alt="MX-Menu icon pyramids">								</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2a20c493" data-id="2a20c493" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-20e46da5 elementor-widget elementor-widget-theme-site-title elementor-widget-heading" data-id="20e46da5" data-element_type="widget" data-widget_type="theme-site-title.default">
+<div class="elementor-widget-container">
+<h1 class="elementor-heading-title elementor-size-default"><a href="https://mxlinux.org/">MX Linux</a></h1>		</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="elementor-element elementor-element-70349ec6 elementor-nav-menu__align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--indicator-classic elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="70349ec6" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-double-line e--animation-drop-in"><ul id="menu-1-70349ec6" class="elementor-nav-menu" data-smartmenus-id="16075911121566968"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5825"><a href="https://mxlinux.org/" class="elementor-item">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="https://mxlinux.org/mx-linux-blog/" class="elementor-item">News</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1796"><a href="https://mxlinux.org/products/" class="elementor-item has-submenu" id="sm-16075911121566968-1" aria-haspopup="true" aria-controls="sm-16075911121566968-2" aria-expanded="false">Products<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-2" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-1" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://mxlinux.org/products/" class="elementor-sub-item">Products Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234"><a href="https://mxlinux.org/current-release-features/" class="elementor-sub-item">Current Release Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1093"><a href="https://mxlinux.org/release-cycle/" class="elementor-sub-item">Release Cycle</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="https://mxlinux.org/migration/" class="elementor-sub-item">Migration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5759"><a href="https://mxlinux.org/download-links/" class="elementor-sub-item">Ways to get it</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5129"><a href="https://mxlinux.org/mx-fluxbox/" class="elementor-sub-item">MX-Fluxbox</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1208"><a href="https://mxlinux.org/art/" class="elementor-sub-item has-submenu" id="sm-16075911121566968-3" aria-haspopup="true" aria-controls="sm-16075911121566968-4" aria-expanded="false">Art<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-4" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-3" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2313"><a href="https://mxlinux.org/art/" class="elementor-sub-item">Art</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1207"><a href="https://mxlinux.org/official-icons/" class="elementor-sub-item">Official Icons</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1539"><a href="https://mxlinux.org/user-contributed-icons/" class="elementor-sub-item">User Contributed Icons</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4424"><a href="https://mxlinux.org/wallpaper/" class="elementor-sub-item has-submenu" id="sm-16075911121566968-5" aria-haspopup="true" aria-controls="sm-16075911121566968-6" aria-expanded="false">Wallpaper<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-6" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-5" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4346"><a href="https://mxlinux.org/mx-19-official-wallpaper/" class="elementor-sub-item">MX 19 Official Wallpaper</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4253"><a href="https://mxlinux.org/mx18-official-wallpaper/" class="elementor-sub-item">MX18 Official Wallpaper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-353"><a href="https://mxlinux.org/reviews/" class="elementor-sub-item">Reviews</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1182"><a href="https://mxlinux.org/testimonials/" class="elementor-sub-item">Testimonials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1797"><a href="https://mxlinux.org/support/" class="elementor-item has-submenu" id="sm-16075911121566968-7" aria-haspopup="true" aria-controls="sm-16075911121566968-8" aria-expanded="false">Support<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-8" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-7" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://mxlinux.org/support/" class="elementor-sub-item">Support Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163"><a target="_blank" rel="noopener noreferrer" href="https://bugs.mxlinux.org/" class="elementor-sub-item">Bugs</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170"><a target="_blank" rel="noopener noreferrer" href="https://forum.mxlinux.org/" class="elementor-sub-item has-submenu" id="sm-16075911121566968-9" aria-haspopup="true" aria-controls="sm-16075911121566968-10" aria-expanded="false">Forum<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-10" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-9" aria-expanded="false">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2314"><a target="_blank" rel="noopener noreferrer" href="https://forum.mxlinux.org/" class="elementor-sub-item">MX Linux Forum</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2315"><a target="_blank" rel="noopener noreferrer" href="https://www.antixforum.com/" class="elementor-sub-item">antiX Forum</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-171"><a target="_blank" rel="noopener noreferrer" href="https://www.linuxquestions.org/questions/antix-mx-linux-127/" class="elementor-sub-item">Alternate Forum</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1304"><a href="https://mxlinux.org/wiki/help-files/mx-faqs/" class="elementor-sub-item">MX FAQs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://mxlinux.org/manuals/" class="elementor-sub-item">Users Manual</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-411"><a href="https://mxlinux.org/wiki/" class="elementor-sub-item has-submenu" id="sm-16075911121566968-11" aria-haspopup="true" aria-controls="sm-16075911121566968-12" aria-expanded="false">MX/antiX Wiki<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-12" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-11" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1762"><a href="https://mxlinux.org/french-wiki/" class="elementor-sub-item">Wiki technique pour MX/antiX</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1760"><a href="https://mxlinux.org/italian-wiki-mx-antix/" class="elementor-sub-item">Italian Wiki  MX/antiX</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1761"><a href="https://mxlinux.org/russian-wiki-mx-antix/" class="elementor-sub-item">Russian Wiki  MX/antiX</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-201"><a href="https://mxlinux.org/videos/" class="elementor-sub-item has-submenu" id="sm-16075911121566968-13" aria-haspopup="true" aria-controls="sm-16075911121566968-14" aria-expanded="false">Videos<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-14" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-13" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-204"><a href="https://mxlinux.org/french-video-tutorials-for-mx-16/" class="elementor-sub-item">French Video Tutorials for MX 16</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-213"><a href="https://mxlinux.org/mx-16-videos/" class="elementor-sub-item">MX 16 Videos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="https://mxlinux.org/mx-15-videos/" class="elementor-sub-item">MX 15 Videos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1326"><a href="https://mxlinux.org/community-repos/" class="elementor-item has-submenu" id="sm-16075911121566968-15" aria-haspopup="true" aria-controls="sm-16075911121566968-16" aria-expanded="false">Repos<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-16" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-15" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://mxlinux.org/community-repos/" class="elementor-sub-item">Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1273"><a target="_blank" rel="noopener noreferrer" href="https://github.com/MX-Linux" class="elementor-sub-item">GIT Repos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2013"><a href="https://mxlinux.org/wiki/system/repos-mx-linux/" class="elementor-sub-item">Sources List</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1327"><a href="https://mxlinux.org/about-us/" class="elementor-item has-submenu" id="sm-16075911121566968-17" aria-haspopup="true" aria-controls="sm-16075911121566968-18" aria-expanded="false">About Us<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121566968-18" role="group" aria-hidden="true" aria-labelledby="sm-16075911121566968-17" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://mxlinux.org/about-us/" class="elementor-sub-item">Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-5706"><a href="https://mxlinux.org/wiki/detailed-iso-list/" class="elementor-sub-item">Our Mirrors</a></li>
+</ul>
+</li>
+</ul></nav>
+<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+<i class="eicon-menu-bar" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true"><ul id="menu-2-70349ec6" class="elementor-nav-menu" data-smartmenus-id="16075911121768552"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-5825"><a href="https://mxlinux.org/" class="elementor-item">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="https://mxlinux.org/mx-linux-blog/" class="elementor-item">News</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1796"><a href="https://mxlinux.org/products/" class="elementor-item has-submenu" id="sm-16075911121768552-1" aria-haspopup="true" aria-controls="sm-16075911121768552-2" aria-expanded="false">Products<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-2" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-1" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"><a href="https://mxlinux.org/products/" class="elementor-sub-item">Products Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234"><a href="https://mxlinux.org/current-release-features/" class="elementor-sub-item">Current Release Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1093"><a href="https://mxlinux.org/release-cycle/" class="elementor-sub-item">Release Cycle</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="https://mxlinux.org/migration/" class="elementor-sub-item">Migration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5759"><a href="https://mxlinux.org/download-links/" class="elementor-sub-item">Ways to get it</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5129"><a href="https://mxlinux.org/mx-fluxbox/" class="elementor-sub-item">MX-Fluxbox</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1208"><a href="https://mxlinux.org/art/" class="elementor-sub-item has-submenu" id="sm-16075911121768552-3" aria-haspopup="true" aria-controls="sm-16075911121768552-4" aria-expanded="false">Art<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-4" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-3" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2313"><a href="https://mxlinux.org/art/" class="elementor-sub-item">Art</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1207"><a href="https://mxlinux.org/official-icons/" class="elementor-sub-item">Official Icons</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1539"><a href="https://mxlinux.org/user-contributed-icons/" class="elementor-sub-item">User Contributed Icons</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4424"><a href="https://mxlinux.org/wallpaper/" class="elementor-sub-item has-submenu" id="sm-16075911121768552-5" aria-haspopup="true" aria-controls="sm-16075911121768552-6" aria-expanded="false">Wallpaper<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-6" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-5" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4346"><a href="https://mxlinux.org/mx-19-official-wallpaper/" class="elementor-sub-item">MX 19 Official Wallpaper</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4253"><a href="https://mxlinux.org/mx18-official-wallpaper/" class="elementor-sub-item">MX18 Official Wallpaper</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-353"><a href="https://mxlinux.org/reviews/" class="elementor-sub-item">Reviews</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1182"><a href="https://mxlinux.org/testimonials/" class="elementor-sub-item">Testimonials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1797"><a href="https://mxlinux.org/support/" class="elementor-item has-submenu" id="sm-16075911121768552-7" aria-haspopup="true" aria-controls="sm-16075911121768552-8" aria-expanded="false">Support<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-8" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-7" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="https://mxlinux.org/support/" class="elementor-sub-item">Support Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163"><a target="_blank" rel="noopener noreferrer" href="https://bugs.mxlinux.org/" class="elementor-sub-item">Bugs</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170"><a target="_blank" rel="noopener noreferrer" href="https://forum.mxlinux.org/" class="elementor-sub-item has-submenu" id="sm-16075911121768552-9" aria-haspopup="true" aria-controls="sm-16075911121768552-10" aria-expanded="false">Forum<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-10" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-9" aria-expanded="false">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2314"><a target="_blank" rel="noopener noreferrer" href="https://forum.mxlinux.org/" class="elementor-sub-item">MX Linux Forum</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2315"><a target="_blank" rel="noopener noreferrer" href="https://www.antixforum.com/" class="elementor-sub-item">antiX Forum</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-171"><a target="_blank" rel="noopener noreferrer" href="https://www.linuxquestions.org/questions/antix-mx-linux-127/" class="elementor-sub-item">Alternate Forum</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1304"><a href="https://mxlinux.org/wiki/help-files/mx-faqs/" class="elementor-sub-item">MX FAQs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="https://mxlinux.org/manuals/" class="elementor-sub-item">Users Manual</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-411"><a href="https://mxlinux.org/wiki/" class="elementor-sub-item has-submenu" id="sm-16075911121768552-11" aria-haspopup="true" aria-controls="sm-16075911121768552-12" aria-expanded="false">MX/antiX Wiki<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-12" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-11" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1762"><a href="https://mxlinux.org/french-wiki/" class="elementor-sub-item">Wiki technique pour MX/antiX</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1760"><a href="https://mxlinux.org/italian-wiki-mx-antix/" class="elementor-sub-item">Italian Wiki  MX/antiX</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1761"><a href="https://mxlinux.org/russian-wiki-mx-antix/" class="elementor-sub-item">Russian Wiki  MX/antiX</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-201"><a href="https://mxlinux.org/videos/" class="elementor-sub-item has-submenu" id="sm-16075911121768552-13" aria-haspopup="true" aria-controls="sm-16075911121768552-14" aria-expanded="false">Videos<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-14" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-13" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-204"><a href="https://mxlinux.org/french-video-tutorials-for-mx-16/" class="elementor-sub-item">French Video Tutorials for MX 16</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-213"><a href="https://mxlinux.org/mx-16-videos/" class="elementor-sub-item">MX 16 Videos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="https://mxlinux.org/mx-15-videos/" class="elementor-sub-item">MX 15 Videos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1326"><a href="https://mxlinux.org/community-repos/" class="elementor-item has-submenu" id="sm-16075911121768552-15" aria-haspopup="true" aria-controls="sm-16075911121768552-16" aria-expanded="false">Repos<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-16" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-15" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-136"><a href="https://mxlinux.org/community-repos/" class="elementor-sub-item">Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1273"><a target="_blank" rel="noopener noreferrer" href="https://github.com/MX-Linux" class="elementor-sub-item">GIT Repos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2013"><a href="https://mxlinux.org/wiki/system/repos-mx-linux/" class="elementor-sub-item">Sources List</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1327"><a href="https://mxlinux.org/about-us/" class="elementor-item has-submenu" id="sm-16075911121768552-17" aria-haspopup="true" aria-controls="sm-16075911121768552-18" aria-expanded="false">About Us<span class="sub-arrow"><i class="fa"></i></span></a>
+<ul class="sub-menu elementor-nav-menu--dropdown" id="sm-16075911121768552-18" role="group" aria-hidden="true" aria-labelledby="sm-16075911121768552-17" aria-expanded="false">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://mxlinux.org/about-us/" class="elementor-sub-item">Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-5706"><a href="https://mxlinux.org/wiki/detailed-iso-list/" class="elementor-sub-item">Our Mirrors</a></li>
+</ul>
+</li>
+</ul></nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div id="page" class="site grid-container container hfeed grid-parent">
+<div id="content" class="site-content">
+<div data-elementor-type="single" data-elementor-id="431" class="elementor elementor-431 elementor-location-single post-964 post type-post status-publish format-standard hentry category-system" data-elementor-settings="[]">
+<div class="elementor-section-wrap">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-b0a1de9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b0a1de9" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-37d2a87" data-id="37d2a87" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-9788af1 elementor-widget elementor-widget-shortcode" data-id="9788af1" data-element_type="widget" data-widget_type="shortcode.default">
+<div class="elementor-widget-container">
+<div class="elementor-shortcode"><!-- GTranslate: https://gtranslate.io/ -->
+<style type="text/css">
+.switcher {font-family:Arial;font-size:10pt;text-align:left;cursor:pointer;overflow:hidden;width:163px;line-height:17px;}
+.switcher a {text-decoration:none;display:block;font-size:10pt;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
+.switcher a img {vertical-align:middle;display:inline;border:0;padding:0;margin:0;opacity:0.8;}
+.switcher a:hover img {opacity:1;}
+.switcher .selected {background:#FFFFFF url(//mxlinux.org/wp-content/plugins/gtranslate/switcher.png) repeat-x;position:relative;z-index:9999;}
+.switcher .selected a {border:1px solid #CCCCCC;background:url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_down.png) 146px center no-repeat;color:#666666;padding:3px 5px;width:151px;}
+.switcher .selected a.open {background-image:url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_up.png)}
+.switcher .selected a:hover {background:#F0F0F0 url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_down.png) 146px center no-repeat;}
+.switcher .option {position:relative;z-index:9998;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC;background-color:#EEEEEE;display:none;width:161px;max-height:198px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;overflow-y:auto;overflow-x:hidden;}
+.switcher .option a {color:#000;padding:3px 5px;}
+.switcher .option a:hover {background:#FFC;}
+.switcher .option a.selected {background:#FFC;}
+#selected_lang_name {float: none;}
+.l_name {float: none !important;margin: 0;}
+.switcher .option::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.3);border-radius:5px;background-color:#F5F5F5;}
+.switcher .option::-webkit-scrollbar {width:5px;}
+.switcher .option::-webkit-scrollbar-thumb {border-radius:5px;-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);background-color:#888;}
+</style>
+<div class="switcher notranslate">
+<div class="selected">
+<a href="#" onclick="return false;"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/en-us.png" alt="en" width="16" height="16"> English</a>
+</div>
+<div class="option">
+<a href="#" onclick="doGTranslate('en|zh-CN');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Chinese (Simplified)" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/zh-CN.png" alt="zh-CN" width="16" height="16"> Chinese (Simplified)</a><a href="#" onclick="doGTranslate('en|nl');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Dutch" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/nl.png" alt="nl" width="16" height="16"> Dutch</a><a href="#" onclick="doGTranslate('en|en');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="English" class="nturl selected"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/en-us.png" alt="en" width="16" height="16"> English</a><a href="#" onclick="doGTranslate('en|fr');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="French" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/fr.png" alt="fr" width="16" height="16"> French</a><a href="#" onclick="doGTranslate('en|de');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="German" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/de.png" alt="de" width="16" height="16"> German</a><a href="#" onclick="doGTranslate('en|it');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Italian" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/it.png" alt="it" width="16" height="16"> Italian</a><a href="#" onclick="doGTranslate('en|pl');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Polish" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/pl.png" alt="pl" width="16" height="16"> Polish</a><a href="#" onclick="doGTranslate('en|pt');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Portuguese" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/pt.png" alt="pt" width="16" height="16"> Portuguese</a><a href="#" onclick="doGTranslate('en|ru');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Russian" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/ru.png" alt="ru" width="16" height="16"> Russian</a><a href="#" onclick="doGTranslate('en|es');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Spanish" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/es.png" alt="es" width="16" height="16"> Spanish</a></div>
+</div>
+<script type="text/javascript">
+jQuery('.switcher .selected').click(function() {jQuery('.switcher .option a img').each(function() {if(!jQuery(this)[0].hasAttribute('src'))jQuery(this).attr('src', jQuery(this).attr('data-gt-lazy-src'))});if(!(jQuery('.switcher .option').is(':visible'))) {jQuery('.switcher .option').stop(true,true).delay(100).slideDown(500);jQuery('.switcher .selected a').toggleClass('open')}});
+jQuery('.switcher .option').bind('mousewheel', function(e) {var options = jQuery('.switcher .option');if(options.is(':visible'))options.scrollTop(options.scrollTop() - e.originalEvent.wheelDelta);return false;});
+jQuery('body').not('.switcher').click(function(e) {if(jQuery('.switcher .option').is(':visible') && e.target != jQuery('.switcher .option').get(0)) {jQuery('.switcher .option').stop(true,true).delay(100).slideUp(500);jQuery('.switcher .selected a').toggleClass('open')}});
+</script>
+<style type="text/css">
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+.goog-text-highlight {background-color:transparent !important;box-shadow:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+</style>
+<div id="google_translate_element2"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage"><select class="goog-te-combo" aria-label="Language Translate Widget"><option value="" selected="selected">Select Language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="am">Amharic</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="co">Corsican</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="fy">Frisian</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="haw">Hawaiian</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="rw">Kinyarwanda</option><option value="ko">Korean</option><option value="ku">Kurdish (Kurmanji)</option><option value="ky">Kyrgyz</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="lb">Luxembourgish</option><option value="mk">Macedonian</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="or">Odia (Oriya)</option><option value="ps">Pashto</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sm">Samoan</option><option value="gd">Scots Gaelic</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="sn">Shona</option><option value="sd">Sindhi</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="tt">Tatar</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="tk">Turkmen</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="ug">Uyghur</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="xh">Xhosa</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select><select class="goog-te-combo" aria-label="Language Translate Widget"><option value="" selected="selected">Select Language</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="am">Amharic</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="co">Corsican</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="fy">Frisian</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="haw">Hawaiian</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="rw">Kinyarwanda</option><option value="ko">Korean</option><option value="ku">Kurdish (Kurmanji)</option><option value="ky">Kyrgyz</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="lb">Luxembourgish</option><option value="mk">Macedonian</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="or">Odia (Oriya)</option><option value="ps">Pashto</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sm">Samoan</option><option value="gd">Scots Gaelic</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="sn">Shona</option><option value="sd">Sindhi</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="tt">Tatar</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="tk">Turkmen</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="ug">Uyghur</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="xh">Xhosa</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></div>Powered by <span style="white-space:nowrap"><a class="goog-logo-link" href="https://translate.google.com/" target="_blank"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/googlelogo_color_42x16dp.png" style="padding-right: 3px" alt="Google Translate" width="37px" height="14px">Translate</a></span></div><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage"></div>Powered by <span style="white-space:nowrap"><a class="goog-logo-link" href="https://translate.google.com/" target="_blank"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/googlelogo_color_42x16dp.png" style="padding-right: 3px" alt="Google Translate" width="37px" height="14px">Translate</a></span></div></div>
+<script type="text/javascript">
+function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
+</script><script type="text/javascript" src="Hibernate%20%E2%80%93%20MX%20Linux_files/element.js"></script>
+<script type="text/javascript">
+function GTranslateGetCurrentLang() {var keyValue = document['cookie'].match('(^|;) ?googtrans=([^;]*)(;|$)');return keyValue ? keyValue[2].split('/')[2] : null;}
+function GTranslateFireEvent(element,event){try{if(document.createEventObject){var evt=document.createEventObject();element.fireEvent('on'+event,evt)}else{var evt=document.createEvent('HTMLEvents');evt.initEvent(event,true,true);element.dispatchEvent(evt)}}catch(e){}}
+function doGTranslate(lang_pair){if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];if(GTranslateGetCurrentLang() == null && lang == lang_pair.split('|')[0])return;var teCombo;var sel=document.getElementsByTagName('select');for(var i=0;i<sel.length;i++)if(/goog-te-combo/.test(sel[i].className)){teCombo=sel[i];break;}if(document.getElementById('google_translate_element2')==null||document.getElementById('google_translate_element2').innerHTML.length==0||teCombo.length==0||teCombo.innerHTML.length==0){setTimeout(function(){doGTranslate(lang_pair)},500)}else{teCombo.value=lang;GTranslateFireEvent(teCombo,'change');GTranslateFireEvent(teCombo,'change')}}
+if(GTranslateGetCurrentLang() != null)jQuery(document).ready(function() {var lang_html = jQuery('div.switcher div.option').find('img[alt="'+GTranslateGetCurrentLang()+'"]').parent().html();if(typeof lang_html != 'undefined')jQuery('div.switcher div.selected a').html(lang_html.replace('data-gt-lazy-', ''));});
+</script>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-b36cff9 elementor-widget elementor-widget-heading" data-id="b36cff9" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-medium">Wiki Table of Contents</h2>		</div>
+</div>
+<div class="elementor-element elementor-element-bb4ad39 elementor-nav-menu--indicator-classic elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="bb4ad39" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+<div class="elementor-widget-container">
+<nav role="navigation" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-underline e--animation-fade"><ul id="menu-1-bb4ad39" class="elementor-nav-menu sm-vertical" data-smartmenus-id="1607591112197168"><li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1225"><a href="https://mxlinux.org/wiki/all/" class="elementor-item">All</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-418"><a href="https://mxlinux.org/wiki/about/" class="elementor-item">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-417"><a href="https://mxlinux.org/wiki/applications/" class="elementor-item">Applications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-483"><a href="https://mxlinux.org/wiki/antixfaq/" class="elementor-item">AntiX FAQ’s</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-528"><a href="https://mxlinux.org/wiki/hardware/" class="elementor-item">Hardware</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-527"><a href="https://mxlinux.org/wiki/helpfiles/" class="elementor-item">Help Files</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-532"><a href="https://mxlinux.org/wiki/licenses/" class="elementor-item">Licenses</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-518"><a href="https://mxlinux.org/wiki/networking/" class="elementor-item">Networking</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-520"><a href="https://mxlinux.org/wiki/other/" class="elementor-item">Other</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-487"><a href="https://mxlinux.org/wiki/rsyncserver/" class="elementor-item">Rsync Server</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-519"><a href="https://mxlinux.org/wiki/system/" class="elementor-item">System</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2671"><a href="https://mxlinux.org/wiki/translations/" class="elementor-item">Translations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-508"><a href="https://mxlinux.org/wiki/xfce/" class="elementor-item">Xfce</a></li>
+</ul></nav>
+<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+<i class="eicon-menu-bar" aria-hidden="true"></i>
+<span class="elementor-screen-only">Menu</span>
+</div>
+<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" role="navigation" aria-hidden="true"><ul id="menu-2-bb4ad39" class="elementor-nav-menu sm-vertical" data-smartmenus-id="16075911122002117"><li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1225"><a href="https://mxlinux.org/wiki/all/" class="elementor-item">All</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-418"><a href="https://mxlinux.org/wiki/about/" class="elementor-item">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-417"><a href="https://mxlinux.org/wiki/applications/" class="elementor-item">Applications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-483"><a href="https://mxlinux.org/wiki/antixfaq/" class="elementor-item">AntiX FAQ’s</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-528"><a href="https://mxlinux.org/wiki/hardware/" class="elementor-item">Hardware</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-527"><a href="https://mxlinux.org/wiki/helpfiles/" class="elementor-item">Help Files</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-532"><a href="https://mxlinux.org/wiki/licenses/" class="elementor-item">Licenses</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-518"><a href="https://mxlinux.org/wiki/networking/" class="elementor-item">Networking</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-520"><a href="https://mxlinux.org/wiki/other/" class="elementor-item">Other</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-487"><a href="https://mxlinux.org/wiki/rsyncserver/" class="elementor-item">Rsync Server</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-519"><a href="https://mxlinux.org/wiki/system/" class="elementor-item">System</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2671"><a href="https://mxlinux.org/wiki/translations/" class="elementor-item">Translations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-508"><a href="https://mxlinux.org/wiki/xfce/" class="elementor-item">Xfce</a></li>
+</ul></nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7cb4ba94" data-id="7cb4ba94" data-element_type="column">
+<div class="elementor-column-wrap elementor-element-populated">
+<div class="elementor-widget-wrap">
+<div class="elementor-element elementor-element-4173737a elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="4173737a" data-element_type="widget" data-widget_type="theme-post-title.default">
+<div class="elementor-widget-container">
+<h1 class="elementor-heading-title elementor-size-default">Hibernate</h1>		</div>
+</div>
+<div class="elementor-element elementor-element-598bc156 elementor-widget elementor-widget-post-info" data-id="598bc156" data-element_type="widget" data-widget_type="post-info.default">
+<div class="elementor-widget-container">
+<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+<li class="elementor-icon-list-item elementor-repeater-item-a925476 elementor-inline-item" itemprop="author">
+<span class="elementor-icon-list-icon">
+<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-author">
+Jerry3904					</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-6c6e82d elementor-widget elementor-widget-post-info" data-id="6c6e82d" data-element_type="widget" data-widget_type="post-info.default">
+<div class="elementor-widget-container">
+<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+<li class="elementor-icon-list-item elementor-repeater-item-8f026e7 elementor-inline-item" itemprop="datePublished">
+<span class="elementor-icon-list-icon">
+<i class="fa fa-calendar" aria-hidden="true"></i>
+</span>
+<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+November 15, 2017					</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-4a566286 elementor-widget elementor-widget-post-info" data-id="4a566286" data-element_type="widget" data-widget_type="post-info.default">
+<div class="elementor-widget-container">
+<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+<li class="elementor-icon-list-item elementor-repeater-item-d10d453 elementor-inline-item">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="far fa-tags"></i>							</span>
+<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-custom">
+Version: MX-14, MX-15, MX-16, and MX-17					</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-5cb67c4d elementor-widget elementor-widget-post-info" data-id="5cb67c4d" data-element_type="widget" data-widget_type="post-info.default">
+<div class="elementor-widget-container">
+<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+<li class="elementor-icon-list-item elementor-repeater-item-b396b46 elementor-inline-item" itemprop="about">
+<span class="elementor-icon-list-icon">
+<i aria-hidden="true" class="fas fa-tags"></i>							</span>
+<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
+<span class="elementor-post-info__item-prefix">Section: </span>
+<span class="elementor-post-info__terms-list">
+<span class="elementor-post-info__terms-list-item">System</span>				</span>
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="elementor-element elementor-element-501714c elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="501714c" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-62549f8c elementor-widget elementor-widget-theme-post-content" data-id="62549f8c" data-element_type="widget" data-widget_type="theme-post-content.default">
+<div class="elementor-widget-container">
+<h2>Outdated</h2>
+<h2>Background</h2>
+<p>Hibernation is an alternative to suspend, and is used to write the 
+RAM of your system to disk and shut down the machine. Upon restarting, 
+the applications you had open when initiating hibernation will be in 
+place without reopening them. It can be particularly useful on laptops 
+to save power.</p>
+<p>The process typically takes 15-45 seconds on most modern computers, 
+both hibernating and returning–in stark contrast to suspend, which takes
+ only a few seconds. The user will usually see the screen go black 
+before hibernation finishes its work.</p>
+<h2>Setup</h2>
+<ol><li>You must have created a swap partition prior to, or during, the 
+installation of MX.  Instructions on how this is done can be found in 
+the Users Manual, Section 2.3.3. The size of the partition must be large
+ enough to hold the RAM consumed when hibernate is invoked. An old rule 
+of thumb is to make the swap partition 1-1.5 times the size of installed
+ memory. With large memory installed the size may be lowered</li><li>Add this line to grub’s kernel parameters (most easily done using Grub Customizer, see below):</li></ol>
+<pre class="wp-block-code"><code>resume = /dev/sdx</code></pre>
+<p>That “x” is the swap partion (such as “sda1”) which you can locate by typing in a terminal as regular user this command:</p>
+<pre class="wp-block-code"><code>inxi -P | grep swap</code></pre>
+<figure class="wp-block-image"><img loading="lazy" src="Hibernate%20%E2%80%93%20MX%20Linux_files/grubcustomizer_kernelparams_0.png" alt="" class="wp-image-965" srcset="https://mxlinux.org/wp-content/uploads/2019/01/grubcustomizer_kernelparams_0.png 600w, https://mxlinux.org/wp-content/uploads/2019/01/grubcustomizer_kernelparams_0-300x251.png 300w" sizes="(max-width: 600px) 100vw, 600px" width="600" height="502"></figure>
+<h2><strong>Init system</strong></h2>
+<h3>Sysvinit (default)</h3>
+<p>Hibernation was removed from default locations in MX Linux such as 
+the logout box because it proved highly unreliable in users’ tests. One 
+user posted a method that has worked for some, but is not officially 
+supported by MX Linux.</p>
+<ul><li>Search and mark for complete removal:<ul><li><em>pm-utils</em></li><li><em>uswsusp</em></li></ul></li><li>Reinstall
+ first pm-utils and then uswsusp. Not necessary for hibernate to 
+function, but should give feedback and a percentage counter rather than a
+ black screen.</li></ul>
+<h3>Systemd</h3>
+<p>Hibernation in MX 17 works if you choose Advanced Boot Options &gt; systemd boot option on the Bootup screen (grub).</p>
+<h2>Use</h2>
+<h3>Login screen (lightdm)</h3>
+<p>There is a link for “Hibernate” in the menu that shows when you click Power icon in the right corner of the top bar.</p>
+<h3>Logout screen(lightdm)</h3>
+<p>The command button for hibernate on the logout dialog box is hidden 
+by default in MX Linux. If you use hibernate regularly with success, you
+ can add it to the logout dialog box as follows.</p>
+<p></p>
+<ol><li>Open this file in featherpad or another text editor: ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml</li><li>Edit lines 36-38  to change ShowHibernate to “true” so it looks like this:</li></ol>
+<pre class="wp-block-code"><code>&lt;property name="shutdown" type="empty"&gt;
+
+&lt;property name="ShowHibernate" type="bool" value="true"/&gt;
+
+&lt;/property&gt;</code></pre>
+<p>Log out and back in for it to show.</p>
+<h2>CLI</h2>
+<p><strong>sysvinit</strong></p>
+<pre class="wp-block-code"><code>sudo pm-hibernate</code></pre>
+<p><strong>systemd</strong></p>
+<pre class="wp-block-code"><code>systemctl hibernate</code></pre>
+</div>
+</div>
+<div class="elementor-element elementor-element-769930c elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="769930c" data-element_type="widget" data-widget_type="divider.default">
+<div class="elementor-widget-container">
+<div class="elementor-divider">
+<span class="elementor-divider-separator">
+</span>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-586b6913 elementor-widget elementor-widget-post-comments" data-id="586b6913" data-element_type="widget" data-widget_type="post-comments.theme_comments">
+<div class="elementor-widget-container">
+<div id="comments">
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://mxlinux.org/wiki/system/hibernate/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://mxlinux.org/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-form-comment"><label for="comment" class="screen-reader-text">Comment</label><textarea autocomplete="new-password" id="comment" name="a873bc66e9" cols="45" rows="8" aria-required="true" required=""></textarea><textarea id="a06415242de46507c18d047853bdbc49" aria-hidden="true" name="comment" autocomplete="new-password" style="padding:0 !important;clip:rect(1px, 1px, 1px, 1px) !important;position:absolute !important;white-space:nowrap !important;height:1px !important;width:1px !important;overflow:hidden !important;" tabindex="-1"></textarea><script data-noptimize="" type="text/javascript">document.getElementById("comment").setAttribute( "id", "a06415242de46507c18d047853bdbc49" );document.getElementById("a873bc66e9").setAttribute( "id", "comment" );</script></p><label for="author" class="screen-reader-text">Name</label><input placeholder="Name" id="author" name="author" type="text" size="30">
+<label for="email" class="screen-reader-text">Email</label><input placeholder="Email" id="email" name="email" type="email" size="30">
+<label for="url" class="screen-reader-text">Website</label><input placeholder="Website" id="url" name="url" type="url" size="30">
+<div class="g-recaptcha" data-sitekey="6LejKlUUAAAAAEoO3IQY8J6dg2uExcY2vei9Ain7"><div style="width: 304px; height: 78px;"><div><iframe src="Hibernate%20%E2%80%93%20MX%20Linux_files/anchor.html" role="presentation" name="a-5wzrli121n93" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+<noscript>
+<iframe src="https://www.google.com/recaptcha/api/fallback?k=6LejKlUUAAAAAEoO3IQY8J6dg2uExcY2vei9Ain7"></iframe>
+<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea>
+</noscript>
+<script id="gRecaptchaSrc" src="Hibernate%20%E2%80%93%20MX%20Linux_files/api.js"></script><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="964" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+</div><!-- #comments -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-79ed8d26 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="79ed8d26" data-element_type="section">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-row">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3d3f2f0" data-id="3d3f2f0" data-element_type="column">
+<div class="elementor-column-wrap">
+<div class="elementor-widget-wrap">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+</div>
+</div>
+<div class="site-footer">
+<div id="footer-widgets" class="site footer-widgets">
+<div class="footer-widgets-container grid-container grid-parent">
+<div class="inside-footer-widgets">
+<div class="footer-widget-1 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+<aside id="text-3" class="widget inner-padding widget_text">			<div class="textwidget"><p><a href="https://mxlinux.org/privacy-policy/">Privacy Policy</a></p>
+<p><a href="https://mxlinux.org/terms-of-use/">Terms of Use</a></p>
+</div>
+</aside>	</div>
+<div class="footer-widget-2 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+<aside id="gtranslate-4" class="widget inner-padding widget_gtranslate"><!-- GTranslate: https://gtranslate.io/ -->
+<style type="text/css">
+.switcher {font-family:Arial;font-size:10pt;text-align:left;cursor:pointer;overflow:hidden;width:163px;line-height:17px;}
+.switcher a {text-decoration:none;display:block;font-size:10pt;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
+.switcher a img {vertical-align:middle;display:inline;border:0;padding:0;margin:0;opacity:0.8;}
+.switcher a:hover img {opacity:1;}
+.switcher .selected {background:#FFFFFF url(//mxlinux.org/wp-content/plugins/gtranslate/switcher.png) repeat-x;position:relative;z-index:9999;}
+.switcher .selected a {border:1px solid #CCCCCC;background:url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_down.png) 146px center no-repeat;color:#666666;padding:3px 5px;width:151px;}
+.switcher .selected a.open {background-image:url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_up.png)}
+.switcher .selected a:hover {background:#F0F0F0 url(//mxlinux.org/wp-content/plugins/gtranslate/arrow_down.png) 146px center no-repeat;}
+.switcher .option {position:relative;z-index:9998;border-left:1px solid #CCCCCC;border-right:1px solid #CCCCCC;border-bottom:1px solid #CCCCCC;background-color:#EEEEEE;display:none;width:161px;max-height:198px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;overflow-y:auto;overflow-x:hidden;}
+.switcher .option a {color:#000;padding:3px 5px;}
+.switcher .option a:hover {background:#FFC;}
+.switcher .option a.selected {background:#FFC;}
+#selected_lang_name {float: none;}
+.l_name {float: none !important;margin: 0;}
+.switcher .option::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 3px rgba(0,0,0,0.3);border-radius:5px;background-color:#F5F5F5;}
+.switcher .option::-webkit-scrollbar {width:5px;}
+.switcher .option::-webkit-scrollbar-thumb {border-radius:5px;-webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);background-color:#888;}
+</style>
+<div class="switcher notranslate">
+<div class="selected">
+<a href="#" onclick="return false;"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/en-us.png" alt="en" width="16" height="16"> English</a>
+</div>
+<div class="option">
+<a href="#" onclick="doGTranslate('en|zh-CN');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Chinese (Simplified)" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/zh-CN.png" alt="zh-CN" width="16" height="16"> Chinese (Simplified)</a><a href="#" onclick="doGTranslate('en|nl');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Dutch" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/nl.png" alt="nl" width="16" height="16"> Dutch</a><a href="#" onclick="doGTranslate('en|en');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="English" class="nturl selected"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/en-us.png" alt="en" width="16" height="16"> English</a><a href="#" onclick="doGTranslate('en|fr');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="French" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/fr.png" alt="fr" width="16" height="16"> French</a><a href="#" onclick="doGTranslate('en|de');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="German" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/de.png" alt="de" width="16" height="16"> German</a><a href="#" onclick="doGTranslate('en|it');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Italian" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/it.png" alt="it" width="16" height="16"> Italian</a><a href="#" onclick="doGTranslate('en|pl');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Polish" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/pl.png" alt="pl" width="16" height="16"> Polish</a><a href="#" onclick="doGTranslate('en|pt');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Portuguese" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/pt.png" alt="pt" width="16" height="16"> Portuguese</a><a href="#" onclick="doGTranslate('en|ru');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Russian" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/ru.png" alt="ru" width="16" height="16"> Russian</a><a href="#" onclick="doGTranslate('en|es');jQuery('div.switcher div.selected a').html(jQuery(this).html());return false;" title="Spanish" class="nturl"><img data-gt-lazy-src="//mxlinux.org/wp-content/plugins/gtranslate/flags/16/es.png" alt="es" width="16" height="16"> Spanish</a></div>
+</div>
+<script type="text/javascript">
+jQuery('.switcher .selected').click(function() {jQuery('.switcher .option a img').each(function() {if(!jQuery(this)[0].hasAttribute('src'))jQuery(this).attr('src', jQuery(this).attr('data-gt-lazy-src'))});if(!(jQuery('.switcher .option').is(':visible'))) {jQuery('.switcher .option').stop(true,true).delay(100).slideDown(500);jQuery('.switcher .selected a').toggleClass('open')}});
+jQuery('.switcher .option').bind('mousewheel', function(e) {var options = jQuery('.switcher .option');if(options.is(':visible'))options.scrollTop(options.scrollTop() - e.originalEvent.wheelDelta);return false;});
+jQuery('body').not('.switcher').click(function(e) {if(jQuery('.switcher .option').is(':visible') && e.target != jQuery('.switcher .option').get(0)) {jQuery('.switcher .option').stop(true,true).delay(100).slideUp(500);jQuery('.switcher .selected a').toggleClass('open')}});
+</script>
+<style type="text/css">
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+.goog-text-highlight {background-color:transparent !important;box-shadow:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+</style>
+<div id="google_translate_element2"></div>
+<script type="text/javascript">
+function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
+</script><script type="text/javascript" src="Hibernate%20%E2%80%93%20MX%20Linux_files/element.js"></script>
+<script type="text/javascript">
+function GTranslateGetCurrentLang() {var keyValue = document['cookie'].match('(^|;) ?googtrans=([^;]*)(;|$)');return keyValue ? keyValue[2].split('/')[2] : null;}
+function GTranslateFireEvent(element,event){try{if(document.createEventObject){var evt=document.createEventObject();element.fireEvent('on'+event,evt)}else{var evt=document.createEvent('HTMLEvents');evt.initEvent(event,true,true);element.dispatchEvent(evt)}}catch(e){}}
+function doGTranslate(lang_pair){if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];if(GTranslateGetCurrentLang() == null && lang == lang_pair.split('|')[0])return;var teCombo;var sel=document.getElementsByTagName('select');for(var i=0;i<sel.length;i++)if(/goog-te-combo/.test(sel[i].className)){teCombo=sel[i];break;}if(document.getElementById('google_translate_element2')==null||document.getElementById('google_translate_element2').innerHTML.length==0||teCombo.length==0||teCombo.innerHTML.length==0){setTimeout(function(){doGTranslate(lang_pair)},500)}else{teCombo.value=lang;GTranslateFireEvent(teCombo,'change');GTranslateFireEvent(teCombo,'change')}}
+if(GTranslateGetCurrentLang() != null)jQuery(document).ready(function() {var lang_html = jQuery('div.switcher div.option').find('img[alt="'+GTranslateGetCurrentLang()+'"]').parent().html();if(typeof lang_html != 'undefined')jQuery('div.switcher div.selected a').html(lang_html.replace('data-gt-lazy-', ''));});
+</script>
+</aside>	</div>
+<div class="footer-widget-3 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+<aside id="text-5" class="widget inner-padding widget_text">			<div class="textwidget"><p>&nbsp;</p>
+<p><a href="https://mxlinux.org/wp-login.php">Member Login</a></p>
+<p>&nbsp;</p>
+</div>
+</aside>	</div>
+</div>
+</div>
+</div>
+<footer class="site-info" itemtype="https://schema.org/WPFooter" itemscope="">
+<div class="inside-site-info grid-container grid-parent">
+<div class="copyright-bar">
+© 2020 MXLinux  |  Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.				</div>
+</div>
+</footer>
+</div>
+<a title="Scroll back to top" aria-label="Scroll back to top" rel="nofollow" href="#" class="generate-back-to-top" style="opacity: 1; visibility: visible;" data-scroll-speed="400" data-start-scroll="300">
+</a><a rel="nofollow" style="display:none;" href="https://mxlinux.org/?blackhole=8df38007c3" title="Blackhole for Bad Bots">Do NOT follow this link or you will be banned from the site!</a>
+<script>
+// Used by Gallery Custom Links to handle tenacious Lightboxes
+jQuery(document).ready(function () {
+function mgclInit() {
+if (jQuery.fn.off) {
+jQuery('.no-lightbox, .no-lightbox img').off('click'); // jQuery 1.7+
+}
+else {
+jQuery('.no-lightbox, .no-lightbox img').unbind('click'); // < jQuery 1.7
+}
+jQuery('a.no-lightbox').click(mgclOnClick);
+if (jQuery.fn.off) {
+jQuery('a.set-target').off('click'); // jQuery 1.7+
+}
+else {
+jQuery('a.set-target').unbind('click'); // < jQuery 1.7
+}
+jQuery('a.set-target').click(mgclOnClick);
+}
+function mgclOnClick() {
+if (!this.target || this.target == '' || this.target == '_self')
+window.location = this.href;
+else
+window.open(this.href,this.target);
+return false;
+}
+// From WP Gallery Custom Links
+// Reduce the number of  conflicting lightboxes
+function mgclAddLoadEvent(func) {
+var oldOnload = window.onload;
+if (typeof window.onload != 'function') {
+window.onload = func;
+} else {
+window.onload = function() {
+oldOnload();
+func();
+}
+}
+}
+mgclAddLoadEvent(mgclInit);
+mgclInit();
+});
+</script>
+<script id="getwid-blocks-frontend-js-js-extra">
+var Getwid = {"settings":{"date_time_utc":"2020-12-10 09:01:34","google_api_key":""},"ajax_url":"https:\/\/mxlinux.org\/wp-admin\/admin-ajax.php","nonces":{"recaptcha_v2_contact_form":"eea0f4c12d"}};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/frontend_002.js" id="getwid-blocks-frontend-js-js"></script>
+<script id="tip_jar_wp_js-js-extra">
+var tip_jar_wp_js_vars = {"ajaxurl":"https:\/\/mxlinux.org\/","ajax_nonce_value":"fb773bd7f4","frontend_nonces":{"tip_jar_wp_email_transaction_receipt_nonce":"805f15d5cf","note_with_tip_nonce":"c02dc8bf33","email_login_nonce":"06bd2f6d9b","login_nonce":"411dda89b4","get_transactions_nonce":"df0592f5ed","get_transaction_nonce":"9bbbfc5e0b","get_arrangements_nonce":"5072d8638b","get_arrangement_nonce":"fdd52e41e7","update_arrangement_nonce":"4f3233c6c1","get_arrangement_payment_method_nonce":"6d95936971","cancel_arrangement_nonce":"0c8a815f87","file_download_nonce":"689447b003","get_oembed_nonce":"7d48042386"}};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/tip-jar-wp-frontend.js" id="tip_jar_wp_js-js"></script>
+<!--[if lte IE 11]>
+<script src='https://mxlinux.org/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.0.2' id='generate-classlist-js'></script>
+<![endif]-->
+<script id="generate-main-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Open Sub-Menu","closeSubMenuLabel":"Close Sub-Menu"};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/main.js" id="generate-main-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/back-to-top.js" id="generate-back-to-top-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/comment-reply.js" id="comment-reply-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/jquery_002.js" id="smartmenus-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/frontend-modules.js" id="elementor-frontend-modules-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/jquery.js" id="elementor-sticky-js"></script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/mxlinux.org\/wp-admin\/admin-ajax.php","nonce":"5a5626e155","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/mxlinux.org\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/frontend_004.js" id="elementor-pro-frontend-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/position.js" id="jquery-ui-position-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/dialog.js" id="elementor-dialog-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/waypoints.js" id="elementor-waypoints-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/swiper.js" id="swiper-js"></script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/share-link.js" id="share-link-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"3.0.14","is_static":false,"legacyMode":{"elementWrappers":true},"urls":{"assets":"https:\/\/mxlinux.org\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":964,"title":"Hibernate%20%E2%80%93%20MX%20Linux","excerpt":"","featuredImage":false}};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/frontend_003.js" id="elementor-frontend-js"></script><span id="elementor-device-mode" class="elementor-screen-only"></span>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/underscore.js" id="underscore-js"></script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/wp-util.js" id="wp-util-js"></script>
+<script id="wpforms-elementor-js-extra">
+var wpformsElementorVars = {"recaptcha_type":"v2"};
+</script>
+<script src="Hibernate%20%E2%80%93%20MX%20Linux_files/frontend.js" id="wpforms-elementor-js"></script>
+<div id="webarx-cookie-notice" role="banner" style="opacity: 0.75; color: rgb(255, 255, 255); background-color: rgb(34, 34, 34); visibility: visible;">
+<div class="webarx-cookie-notice-container">
+<div class="webarx-cn-notice-text-container">
+<span id="webarx-cn-notice-text">
+We use cookies for various purposes including analytics. By continuing  you agree to our use of cookies.            </span>
+</div>
+<div class="webarx-cn-notice-button-container">
+<button style="border-color: #FFFFFF; color: #FFFFFF;  " onclick="setCookieForNotice('1year')" id="webarx-cn-accept-cookie" data-cookie-set="accept" class="webarx-cn-set-cookie webarx-cn-button button">I agree</button>
+</div>
+</div>
+</div>
+
+<div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><iframe allowtransparency="true" scrolling="no" name="__privateStripeMetricsController8520" allowpaymentrequest="true" src="Hibernate%20%E2%80%93%20MX%20Linux_files/m-outer-26f06e6dfafc73ef8d70171c2397785d.html" aria-hidden="true" tabindex="-1" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;" frameborder="0"></iframe><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="Hibernate%20%E2%80%93%20MX%20Linux_files/translate_24dp.png" alt="Google Translate" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;" class="g-recaptcha-bubble-arrow"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="Hibernate%20%E2%80%93%20MX%20Linux_files/bframe.html" style="width: 100%; height: 100%;" name="c-5wzrli121n93" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" frameborder="0"></iframe></div></div></body></html>
+<!-- WP Fastest Cache file was created in 0.44871306419373 seconds, on 10-12-20 9:01:34 -->

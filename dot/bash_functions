@@ -1,0 +1,6 @@
+
+
+# compile and run single c file, no flags
+function cr(){
+    gcc -Wall -Wextra -Wpedantic $1 -o exe &&./exe
+}

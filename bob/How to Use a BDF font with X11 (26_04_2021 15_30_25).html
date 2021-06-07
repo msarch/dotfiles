@@ -1,0 +1,97 @@
+<html class=sdonhzt><!--
+ Page saved with SingleFile 
+ url: https://hea-www.harvard.edu/~fine/Tech/font-howto.html 
+ saved date: Mon Apr 26 2021 15:30:25 GMT+0200 (Central European Summer Time)
+--><meta charset=utf-8>
+<title>How to Use a BDF font with X11</title>
+<meta http-equiv=Keywords name=Keywords content="Thomas A. Fine">
+<style>.gsc-control-cse{padding:1em}.gsc-control-cse{width:auto;font-size:13px}.gsc-control-wrapper-cse{width:100%}form.gsc-search-box{font-size:13px;margin-top:0;margin-right:0;margin-bottom:4px;margin-left:0;width:100%}table.gsc-search-box{border-style:none;border-width:0;border-spacing:0 0;width:100%;margin-bottom:2px}table.gsc-search-box td{vertical-align:middle}table.gsc-search-box td.gsc-input{padding-right:12px}.gsc-search-button{width:1%}button::-moz-focus-inner{padding:0;border:0}.gsc-search-button{margin-left:2px}.gsc-results-wrapper-overlay{border:none;margin:auto;border-radius:1px;overflow:auto;height:80%;-webkit-box-shadow:0 3px 10px rgba(34,25,25,0.4);-moz-box-shadow:0 3px 10px rgba(34,25,25,0.4);-ms-box-shadow:0 3px 10px rgba(34,25,25,0.4);-o-box-shadow:0 3px 10px rgba(34,25,25,0.4);box-shadow:0 3px 10px rgba(34,25,25,0.4);border-collapse:separate;background:white;padding:30px;width:70%;position:fixed!important;top:5%;left:12%;opacity:0;z-index:100002;visibility:hidden;-webkit-transition:all 0.25s linear;-moz-transition:all 0.25s linear;-ms-transition:all 0.25s linear;-o-transition:all 0.25s linear;transition:all 0.25s linear;-ms-filter:"progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=135, Color='#888888')"}.gsc-positioningWrapper{position:relative}.gsc-wrapper{position:relative;display:block}.gsc-control-cse:after{content:".";display:block;height:0;clear:both;visibility:hidden}.gsc-control-cse{border:1px solid #fff}.gsc-input{font-size:16px}.gsc-input-box{border:1px solid #dfe1e5;background:#fff}.gsc-search-button-v2{font-size:0;padding:6px 27px;width:auto;vertical-align:middle;border:1px solid #666;border-radius:2px}.gsc-search-button-v2:hover{border-color:#2f5bb7;background-color:#357ae8;background-image:linear-gradient(top,#4d90fe,#357ae8)}button::-moz-focus-inner{padding:0;border:0}.gsc-control-cse{font-family:arial,sans-serif}.gsc-control-cse{border-color:#FFFFFF;background-color:#FFFFFF}input.gsc-input,.gsc-input-box{border-color:#D9D9D9}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#666666;background-color:#CECECE;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsib_a{width:100%}.gssb_c{border:0}.gsib_a{padding:5px 9px 4px 9px}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}.gssb_c{z-index:5000}</style><link rel=icon href=data:image/gif;base64,R0lGODlhEAAQAMIAAP///9jY2P8AAJ0Atf//AAAA/wD/AP6AACH5BAEAAAAALAAAAAAQABAAAANDCLrcHjC+SGsAQWht6eZdNXQEEZTRGBVRaaYQW7DGGRzQMLJxYNS33G7lgxxwAV1gtiz8jEhVkwZEYkKVCcXB7Xq5CQA7 type=image/gif><style>.sf-hidden{display:none!important}</style><link rel=canonical href=https://hea-www.harvard.edu/~fine/Tech/font-howto.html></head>
+<body style=max-width:1000 bgcolor=#FFFFFF>
+<h1>How to Use a BDF font with X11</h1>
+<h3>Step 0</h3>
+Before you start, it would be good to know if you already have a font
+directory in your home directory. Run "<tt>xset q</tt>", which will
+display various current X11 settings. One of the things it lists is
+your Font Path, which is the set of locations that are searched for
+fonts. If there is a directory in the list that is in your home
+directory, then you should use that directory, and you don't have
+to create a new directory.
+<h3>Step 1</h3>
+First (if you haven't done this before) you need a place to put the fonts.
+I suggest a directory called "fonts" in your home directory. Depending
+on your X11 version and configuration, you may need to make this directory
+world-readable.
+<pre>  prompt: cd
+  prompt: mkdir fonts
+  prompt: chmod 755 fonts
+  prompt: cd fonts
+</pre>
+<h3>Step 2</h3>
+Next, move the bdf file(s) into the fonts directory. These steps are
+the same if you just created the directory, or if you are adding new
+fonts to an existing directory. Again, the chmod may not be necessary
+in all cases. Please keep in mind that the filename is NOT the name
+that X11 will use for the font -- the X11 name is stored inside the
+file.
+<pre>  prompt: mv /some/other/location/new_font_file.bdf ./new_font_file.bdf
+  prompt: mkfontdir
+  prompt: chmod 644 *
+</pre>
+<h3>Step 3</h3>
+If you are setting up a new font directory, you have to tell X11 about it.
+If the font directory already exists, and the fontpath already knows about
+it, you only need the second command below:
+<pre>  prompt: xset fp+ $HOME/fonts
+  prompt: xset fp rehash
+</pre>
+In order to have this directory available with every login, you'll also
+need to add the above commands to your X11 startup script. This is
+usually the .xinitrc or .xsession file in your home directory. Under
+CDE, this is usually .dtprofile (in your home directory). Other X11
+setups may use different files -- please ask your site administrator if
+you can't find the appropriate file.
+<h3>Step 4</h3>
+If you want to be able to refer to a font with a convenient name, you
+could edit the BDF file and change the name on the line labelled "FONT ".
+However, you can also make an alias for the file. By editing a file
+called <tt>fonts.alias</tt> in your fonts directory, you can give any
+font another name. The format is simply a line that contains the new name,
+tabs or spaces, and then the original name. The file can contain as
+many entries (lines) as you like. This file should also be made
+world-readable. After editing this file, you need to run
+"<tt>xset fp rehash</tt>" again.
+<h3>Troubleshooting</h3>
+If you have problems, check the following:
+<ul>
+<li>make sure the fonts and the directory (and all of its
+parents) are world-readable.
+<li>Make sure that if you've downloaded a compressed file, or a font in a
+tar file or zip file, that you perform the appropriate unpacking or
+uncompressing.
+<li>Don't forget to run <tt>mkfontdir</tt>, and <tt>xset fp rehash</tt>.
+<li>All BDF font filenames must end with ".bdf".
+<li>Make sure you don't have two fonts with the same name -
+you have to look in the files for this, for a line that starts with
+"FONT " followed by the X11 name of the font.
+</ul>
+<p>
+<h3>Links</h3>
+<a href=https://hea-www.harvard.edu/~fine/Tech/bdfedit.html>Tom's BDF Font Editor</a><br>
+<a href=https://hea-www.harvard.edu/~fine/Tech/x11fonts.html>Tom's X11 Fonts</a><br>
+<a href=https://hea-www.harvard.edu/~fine/Fun/nethack.html>Tom's Big Nethack Font</a><br>
+<hr>
+<table width=100% cellspacing=0 cellpadding=0 border=0>
+<tbody><tr>
+<td>
+<a href=https://hea-www.harvard.edu/~fine/index.html><img alt=Tom src="data:image/gif;base64,R0lGODlhQAAkAKUAALGxsb++uMdNcQAA7pkHpNR9hMvKytLS1NjKm8bGyHvoera2uwPxA9nX2tbaotXV1v7+/vr6+vT09Orq6mtKveDg4Nzc3Nra2tjY2M3MzcjIyPHxGQ8P48DAwLy8vK6urs6YewEB7NDK1i0t4rKytbq5tn/BddzbysLDwdPT1b29v9HQz6upre1/CpWfvwAA8Ih5xv////39/ff39/QEBO/v78LCxuHh4dGrjN/f393d3dnZ2cTEy9fX19TT1AAAACH5BAEAADEALAAAAABAACQAAAb+wJhwSCwaj8ikcslUQiKzmaRGrUqiEUhzy43JoLVJDrMyJDrotMawwuQmNUm2SxfKpBOMpgT4ABYlHmlpHiUkfQAeGg83NTMydUx4GB4siRo+GJqbnJ0YPhoeACweK40RkUczNTooLCQJnrKznQkkLCoYjqlCERMPCwA2tMTFmigAJT01qHQQEjmiBpwGJTgFBQLa29g4bcacGok5El0yNRkAsRo42jTv8PE0AgU4mbI9xSglGROQTOdQkMgEQp48bdjqTaMFQJaPAA0/KbrxL4mMCfvyYXhwLaE3GCJ2gNPkwMGHTj1wbNiAYFOPDigoKqlhY4HGWRlgkBC5aQX+CxgpZKEwscEBJxArW5zg1ANFzCQzDkQkBuPVpg4UOIzgwZPTAxMMHLDMp3IDDhBdNyVAMeEIhAkAvtFKQYBCg40wtILEYAPGAU4fGCjAINbsSgcgWlzw9ECDDS1FopIwxoIAjB0HKITgAGOTixcjgmoCO5jwyqIrWoCY9fKGkRoehlm4kZYTBQIsMFAYMMJF1xQjXnTWw4CBXLEOduBo0ZKTBU07ViQwcuODj9kqEvztZIAAAR4kNlMQ0QnGCw7kwTJYvIln4qXQJ6xYkenCAuq5J5RY4cGDp8oENEDBeeR1wkMIwvVQXGnctdBCVzeokEF/GFgAAH4PWICCCh/+ZODJbQSswIFw+AQ3AgrFGeXJcjhwooMGHZQg24VF6DdNBiQsxMkK3sHgwgAv8DDLgCOo95wniTW3iQakYHCBDx28ZgAKxCzg3QLmcXCXLESSNouD8MlyAwoPGBEBJTf9550In2kpiw0jUrCgLBo4WBsnNwAwwxETaKABLTB4Z8GBL7jgiQ3BBTmnJx/YOcsNayAhQw4o3POhZSIFx4ELD2iiQV4vvEBBCinKktiDsoxBQkVGzOBDAux1ctsCmvAw4gBajTBiqCM84EOpSKqW6g4ktKWEBAZkcCQnMMAQqwu7hiqtXZoA20liLXaSA7HGLiGBBiuM0UltIsAwwrmzI4DUlQJhyRIAc53c4AMA3UpigAY5LFvMnRj0oECYneDQVQ5jelCOORiQkEEO4o7k8CYV3ICjD6x28a3CBOv78CyzVWAACRoczEsMyALQwQMRb7txe2+I0QEAGYg88hAyWNDBBx5kcIEOOVRQgQU73Bm0BT5nzN8HHeQA2cxJeFxJIgms8EAPFlRtdQ8PZJCAKDgb4BrTXUBQQwUHwOgBCWinLYgGB1Qww9Jgxy333HQzEQQAOw==" border=0 align=MIDDLE> Fine's Home</a>
+</td>
+<td>
+<div id=___gcse_0><div class="gsc-control-cse gsc-control-cse-en"><div class=gsc-control-wrapper-cse dir=ltr><form class="gsc-search-box gsc-search-box-tools" accept-charset=utf-8><table class=gsc-search-box cellspacing=0 cellpadding=0><tbody><tr><td class=gsc-input><div class=gsc-input-box id=gsc-iw-id1><table style=width:100%;padding:0px id=gs_id50 class="gstl_50 gsc-input" cellspacing=0 cellpadding=0><tbody><tr><td id=gs_tti50 class=gsib_a><input autocomplete=off type=text size=10 class=gsc-input name=search title=search style="width:100%;padding:0px;border:medium none;margin:0px;height:auto;background:rgb(255,255,255) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAAPCAYAAAAmqKvRAAAFI0lEQVR4AWKgDIwCQDvmADRLEsPxs23btm3bd7vT2zPfYM+2bdu2bdu2bZv51XXq9de182ae2VWp7kmnM9n800lmGzZdwsTFZVGcfyz0fRRnLzVtfmirtfWE/dMOE+ebyPtP3LDdHmMoKv1mDBvFxSHi5H+E/hR6JErya2R+W+hfoU8beT5R/zJG3ncm7+1HgTZ0NG22gwP2kVarmK7bXpJtIPztWQ90gG9WFONGaTq9T/CMMaOwZvZlrd1qMtbMutaxRdyewZdXOc7pc5Ve/5ykx+WZq2wN+XV/Kzao3Z1shNcR7OaW48vt/kkc/MHmm289Vu/D1P8BJxrXRlDmI5RMUiyCE+CbJN/Nl2Wftcr6upDnXDcHozvO2sqr0stAXm36fy626JmtPp85svmNYQCF5yX9vtCM8+ewh/exBmiVY78M8MhmTfRIQO5UF5ANN9xweNG5jYmLx+TsW2LjJY2kPasvQ4BLIN0q++82bX63yK7j7yMve1eJzDsie5Po21H0XMlvDQFvtNKF5TfdjC6hWxo2W6CbE1RpCIxz+Fy9A7jq9p1ZpRcA2VPA9JnzZbb6fOTEGbvL8+HlchpY+dmAzRkAZp819rIuT+f5AehptIqlfT5BLHSfT6J3TwfmhS5IXiIgZf2r0I+mqz0P+8LbXJ7/FvoCUIU+RN7YbOsefsu+FX2/COA3iI2vqR+tLWb2AZd5caHfhb4RuYsd6D8b3qVOCFOiAoNTFLAQ8CgpzvLPhYAThUQtzgS4Wnp1HQDFbSuzVflhsIblxT9vTDqnDywzz2QT7A3P+oOAQo+JszW78ZPsWOF/4tE/InutBi23kWbPBdu8wvtD9m/n9jv5DygX7NNtExwEhrV2TLHpIvQBJvtpmo4owD/YGfDsHln/EMdbTs0zwc8eN76HEzzyncYtBDgcEQIenlPA/fMAxVmCo45enKnrYJTYWg44c9V5zSQAjD3wNDjLRrNVrICc/KZTw8593333HQ4yJp+GGysgH0+DV5IR7hP+18ZkM7qAOKpTY8inH8FAIHbbj4soBHyLNJ2Uz0NXsi6Q9W+8Q4LjSJrLypTOrGsipW5K17rIGcBW8GvoXRt5v4EKb3hlqiaY6shhI+8N9yvGMvvuO4LIvSL0J2CUNFEnuiywiji/YN3sytcIZJ4S+pSgYx/QOpUO6q/Mb4g/3/P3Sfch4EmSTCzzZ07f4wSFn61qAe6nsTqA+3VQgdXbXKUXvn/zKAm9UsMJDAIGfVWA8+7eAZwh9XBB6im1ET3caGO2G4dUTfpFj8x3cuu5WaRvfNJqtaeEp0FAaXPPT0fos+2VtOniZgq9T4BpRuXWI+/89G7HlG6zc1gbmxt08U4aN5Nkq3VMc/BCYLzGphJwUmJYBwGOZqVKL4PA8O3RFFtma8hHF3qrSgLvxY7eAFybvoW4eU7fP4Cquk2cX0cdDr48/iIr8EmnDRw128tKXzo9P7oG7geRWYp96rg8P8M5zjtdv3YCnD98xNeverJ/YhuN4TCaZn3S73DWvfMd3mnP0zdOz/T6vOD7uNRW5Yfy4fDleF/Zfl3AtXmieePvVOq1ALRPWQ9AlyyOP0joFAkIGwblpmk6ATcYPXT8myfJFKEPJXul7BtbbCcy+wFqI02nIiNwUZBxdo1mbN4l7zlOQN9fPwGHjkFkUP9p8jRQaQwF7HuFvtl6661HHuqhwWyYpFjSpeXPZT7XNXz/cnuHemcwHdRz/oEToD+m/9AGrld0/Ae3DhPG3B1sGQAAAABJRU5ErkJggg==) no-repeat scroll left center;outline:currentcolor none medium" id=gsc-i-id1 dir=ltr spellcheck=false value><td class=gsib_b><div class=gsst_b id=gs_st50 dir=ltr><a class=gsst_a href=https://hea-www.harvard.edu/~fine/Tech/font-howto.html style=display:none title="Clear search box" role=button></a></div></table></div><td class=gsc-search-button><button class="gsc-search-button gsc-search-button-v2"><svg width=13 height=13 viewBox="0 0 13 13"><title>search</title><path d="m4.8495 7.8226c0.82666 0 1.5262-0.29146 2.0985-0.87438 0.57232-0.58292 0.86378-1.2877 0.87438-2.1144 0.010599-0.82666-0.28086-1.5262-0.87438-2.0985-0.59352-0.57232-1.293-0.86378-2.0985-0.87438-0.8055-0.010599-1.5103 0.28086-2.1144 0.87438-0.60414 0.59352-0.8956 1.293-0.87438 2.0985 0.021197 0.8055 0.31266 1.5103 0.87438 2.1144 0.56172 0.60414 1.2665 0.8956 2.1144 0.87438zm4.4695 0.2115 3.681 3.6819-1.259 1.284-3.6817-3.7 0.0019784-0.69479-0.090043-0.098846c-0.87973 0.76087-1.92 1.1413-3.1207 1.1413-1.3553 0-2.5025-0.46363-3.4417-1.3909s-1.4088-2.0686-1.4088-3.4239c0-1.3553 0.4696-2.4966 1.4088-3.4239 0.9392-0.92727 2.0864-1.3969 3.4417-1.4088 1.3553-0.011889 2.4906 0.45771 3.406 1.4088 0.9154 0.95107 1.379 2.0924 1.3909 3.4239 0 1.2126-0.38043 2.2588-1.1413 3.1385l0.098834 0.090049z"></path></svg></button><td class="gsc-clear-button sf-hidden"></table></form><div class=gsc-results-wrapper-overlay><div class="gsc-results-close-btn sf-hidden" tabindex=0></div><div class=gsc-positioningWrapper><div class="gsc-tabsAreaInvisible sf-hidden"></div></div><div class=gsc-positioningWrapper><div class="gsc-refinementsAreaInvisible sf-hidden"></div></div><div class="gsc-above-wrapper-area-invisible sf-hidden"></div><div class="gsc-adBlockInvisible sf-hidden"></div><div class=gsc-wrapper><div class="gsc-adBlockInvisible sf-hidden"></div><div class="gsc-resultsbox-invisible sf-hidden"></div></div></div><div class="gsc-modal-background-image sf-hidden" tabindex=0></div></div></div></div>
+</td>
+<td><a href=mailto:theopony@head.cfa.harvard.edu><img src="data:image/gif;base64,R0lGODlhAQABAIAAAPX19f///ywAAAAAAQABAAACAkQBADs=" border=0></a></td>
+<td align=right>
+<a href=mailto:fine@head.cfa.harvard.edu>Send Me Email</a>
+</td>
+</tr>
+</table>
+<table style=width:172px;display:none;top:1315px;left:295px;position:absolute class="gstl_50 gssb_c" cellspacing=0 cellpadding=0></table>

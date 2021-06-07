@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+if [ -e "${SVDIR}/x11" ] && sv check "${SVDIR}/x11" >/dev/null 2>&1; then
+  exec 2>&1
+else
+  exec >"${XDG_CACHE_HOME}"/xorg/xsession.log 2>&1
+fi
+
+for file in ${X11_HOME}/xsession.d/*; do
+  . "$file"
+done
+unset file
+
+if ! [ -e "${SVDIR}/x11" ] || ! sv check "${SVDIR}/x11" >/dev/null 2>&1; then
+  "${XDG_CONFIG_HOME}/dunst/launch" &
+  "${XDG_CONFIG_HOME}/compton/launch" &
+  "${XDG_CONFIG_HOME}/sxhkd/launch" "${XDG_CONFIG_HOME}/sxhkd/sxhkdrc.${X_WM:-bspwm}" &
+
+  exec "${XDG_CONFIG_HOME}/${X_WM:-bspwm}/launch" \
+    >"${XDG_CACHE_HOME}/xorg/wm.log" 2>&1
+else
+  touch /tmp/xsession_runit_loaded
+fi

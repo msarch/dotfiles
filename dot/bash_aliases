@@ -1,0 +1,57 @@
+# enable color support of ls and also add handy aliases
+# if [ -x /usr/bin/dircolors ]; then
+#     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#     alias ls='ls --color=auto'
+#     #alias dir='dir --color=auto'
+#     #alias vdir='vdir --color=auto'
+#
+#     alias grep='grep --color=auto'
+#     alias fgrep='fgrep --color=auto'
+#     alias egrep='egrep --color=auto'
+# fi
+
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# run JAVE
+alias jave="java -jar /home/mi/Dropbox/dot/apps/jave5/jave5.jar &"
+
+# MAKE
+# show details of operation
+alias make="make --trace VERBOSE=1"
+
+# RANGER
+# to quit ranger, and remain in the last directory visited in ranger
+alias ranger='source ranger'
+
+# PYTHON 3
+alias py='python3'
+
+# TMUX
+# tell tmux to read config file from .congig/tmux
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
+
+# METAPOST
+alias mp='mpost'
+
+#MPV
+alias mpv='mpv --config-dir=/home/mi/.config/mpv/'
+
+#XCALC
+alias xcalc='xcalc -rpn'
+
+
+#BC
+alias bc='bc -l'
+
+
+#youtube download
+alias yt='youtube-dl'
+

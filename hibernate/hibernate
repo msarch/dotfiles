@@ -1,0 +1,197 @@
+
+# Enable hibernation mode for Pop!OS - A step by step guide, for hibernation on UEFI Bios, using systemd-boot, kernelstub and a swapfile in an encrypted root partition
+
+from ; pop-planet.info
+
+== Prerequisites — does your kernel support suspend-to-disk?
+============================================================
+
+        > cat /sys/power/state
+    
+Kernel supports whatever is listed in /sys/power/state, so:
+Allowed (to my knowledge) entries there include: mem, standby, freeze, disk. Explanation:
+
+    mem — has several meanings, which one exactly on your system you’ll find out via cat /sys/power/mem_sleep. I have: s2idle [deep]
+    standby — Power-On Suspend (if supported)
+    freeze — Suspend To Idle (STI)
+    disk — Suspend To Disk (STD), hibernation. This what you want!
+
+== Setup Swapfile
+=================
+
+=== Create swapfile
+
+    > fallocate -l [N]G /swapfile # [N] = swapfile size in GB
+    > chmod 600 /swapfile
+    > mkswap /swapfile
+    > swapon /swapfile
+
+=== Edit /etc/fstab
+
+Add 
+
+    /swapfile none swap defaults 0 0
+
+=== Then follow steps
+
+    > sudo swapoff -a
+    > sudo cryptsetup remove cryptswap1
+
+edit `/etc/fstab`, comment the line mentioning cryptswap
+edit `/etc/crypttab `, comment the line mentioning cryptswap
+
+=== Checking the status of the swap
+
+    > sudo cryptsetup status /dev/mapper/cryptswap
+
+You should see following message: 
+
+   "/dev/mapper/cryptswap1 is active and is in use."
+
+=== To check swap status, use:
+
+    > swapon --show
+
+
+== Setup Hibernation with swapfile
+==================================
+
+=== Help: 
+
+https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
+
+Using a swap file requires also setting the resume=swap_device
+and additionally a resume_offset=swap_file_offset kernel parameters. 
+See the kernel documentation.
+
+swap_device is the the volume where the swap file resides and it follows 
+the same format as for the root parameter. 
+The value of swap_file_offset can be obtained by running 
+
+    filefrag -v swap_file
+
+the output is in a table format and the required value is located in the first
+row of the physical_offset column.
+
+=== Identify swapfile
+    The following command may be used to identify swap_device:
+
+    > findmnt -no UUID -T /swapfile
+
+Should give you an output like this "ed035e91-ff20-4c7a-b94b-4ec24d327a94"
+The following command may be used to identify swap_file_offset:
+
+    > filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
+
+Should give you an output like this  :
+"the physical value where the file starts = 241664"
+
+""""""""""""""""""""""""""""""""""UEFI SECTION"""""""""""""""""""""""""""""""""""
+
+== Write resume parameter
+POP OS! Does not use Grub2 in POP OS! 20.04
+POP OS! uses system-boot and kernelstab to manage kernel boot option.
+To add the resume parameter in kernelstab
+
+=== kernel boot parameter:
+
+    > kernelstub -a "resume=swap_device resume_offset=swap_file_offset"
+
+e.g.:
+
+    kernelstub -a "resume=ed035e91-ff20-4c7a-b94b-4ec24d327a94 resume_offset=241664"
+    kernelstub -a "resume=74351347-bacf-4bfe-a54e-d90a22b76157 resume_offset=6434816"
+
+
+OR
+
+    > kernelstub -a "resume=/dev/mapper/data-root resume_offset=241664"
+
+...choose whichever variant works for you.
+Make it permanent and add to 
+
+    "/etc/initramfs-tools/conf.d/resume" 
+
+the same line kernel boot parameter
+Then run in the terminal:
+
+    > sudo update-initramfs -u
+
+"""""""""""""""""""""""""""END OF UEFI SECTION"""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""GRUB SECTION """"""""""""""""""""""""""""""""""""""
+
+
+Copy the UUID value. You will need it later. Then run:
+
+sudo nano /etc/default/grub
+
+(or your favourite editor if not nano). Change the line that says
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+so that it instead says:
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=YOUR_VALUE"
+
+Then, after saving the file and quitting the text editor, run:
+
+sudo update-grub
+
+To test it, run:
+
+sudo systemctl hibernate
+
+== In case of problems
+======================
+
+=== Error: "update-initramfs cryptsetup: ERROR: Couldn't resolve device XXX"
+    Then run in terminal
+    > update-initramfs -c -k all
+
+=== if you get multiple Kernel Boot Option:
+    e.g. "resume=UUID=25fe928e-8214–4177–9d79–5fad2edefc11 resume=UUID=434dsfsf-2233–4177–9d79–5fad2edddfe1"
+    then you have to delete the non working entries. The Following command let's you pass The total boot options to the kernel.
+    > sudo kernelstab -o “resume=UUID=434dsfsf-2233–4177–9d79–5fad2edddfe1”
+    then run
+    > sudo update-initramfs -u
+    Now you can see only one entry in Kernel boot option.
+    > reboot
+
+== Test hibernation
+===================
+
+    sudo systemctl hibernate
+
+== To see the log output
+
+    dmesg | grep "PM: "
+
+== Lid close events
+===================
+
+=== Setup the events
+    Edit logind.conf to enable suspend-then-hibernate on lid closed and uncomment the following lines.
+    Run first:
+
+    > sudo gedit /etc/systemd/logind.conf
+
+Edit and uncomment these Lines:
+    "HandleLidSwitch=suspend-then-hibernate"
+    "HandleLidSwitchExternalPower=suspend-then-hibernate"
+
+=== Setup delay
+    To add the delay after how many sec/min the hibernation should happen after suspend was entered.
+
+    > sudo gedit /etc/systemd/sleep.conf
+
+Uncomment and edit following line:
+    "HibernateDelaySec=30min"
+
+Note: for min add the value "min" e.g. 30min, for seconds add the value 30. 
+help: https://www.freedesktop.org/software/systemd/man/systemd-sleep.conf.html
+
+    ++++Congrats hibernation should be up and working like a charm now.++++
+
+
+// vim: set syntax=asciidoc:    

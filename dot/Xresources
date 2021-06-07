@@ -1,0 +1,126 @@
+
+
+
+
+/*********************/
+/*       URxvt       */
+/*********************/
+
+URxvt*termName: rxvt
+!URxvt*font: xft:Monospace:pixelsize=10: antialias=true
+URxvt.font: xft:DejaVu Sans Mono:size=10: antialias=false
+!URxvt*allow_bold: false
+!URxvt*depth: 32
+URxvt*foreground: grey
+URxvt*background: black
+URxvt*transparent: true
+!URxvt*shading: 10
+!URxvt*tint: black
+!URxvt*cursorBlink: true
+!URxvt*cursorColor: #00F3FF
+URxvt*scrollBar: false
+URxvt*saveLines: 1000
+!URxvt*perl-ext-common: default,matcher,tabbed
+!URxvt*urlLauncher: jumanji
+!URxvt*colorUL: #3465A4
+!URxvt*matcher.button: 1
+!URxvt*tabbed.tabbar-fg: 10
+!URxvt*tabbed.tabbar-bg: 8
+!URxvt*tabbed.tab-fg: 14
+!URxvt*tabbed.tab-bg: 8
+
+! Turn on/off pseudo-transparency by using the root pixmap as background
+URxvt*transpant:                       true
+
+! Tint the transparent background with the given colour. Note that a black tint yields a completely black image while a white tint yields the image unchanged.
+! URxvt*tintColor:                      color
+
+! Darken (0 .. 99) or lighten (101 .. 200) the transparent background.  A value of 100 means no shading
+! URxvt*shading:                        number
+
+! Apply gaussian blur with the specified radius to the transparent background. If a single number is specified, the vertical and horizontal radii are considered to be the same. 
+! Setting one of the radii to 1 and the other to a large number creates interesting effects on some backgrounds. The maximum radius value is 128. An horizontal or vertical radius of 0 disables blur
+URxvt*blurRadius:                       2x2
+
+! Fade the text by the given percentage when focus is lost
+URxvt*fading:                           30
+! Fade to this colour, when fading is used (see fading:). The default colour is black
+URxvt*fadeColor:                        Black
+
+! PaperColor Theme
+
+URxvt.foreground: #4D4D4C
+URxvt.background: #EEEEEE
+
+! black
+
+URxvt.color0: #EDEDED
+URxvt.color8: #969694
+
+! red
+
+URxvt.color1: #D7005F
+URxvt.color9: #D7005F
+
+! green
+
+URxvt.color2: #718C00
+URxvt.color10: #718C00
+
+! yellow / orange
+
+URxvt.color3: #D75F00
+URxvt.color11: #D75F00
+
+! blue
+
+URxvt.color4: #4271AE
+URxvt.color12: #4271AE
+
+! magenta
+
+URxvt.color5: #8959A8
+URxvt.color13: #8959A8
+
+! cyan
+
+URxvt.color6: #3E999F
+URxvt.color14: #3E999F
+
+! white
+
+URxvt.color7: #4D4D4C
+URxvt.color15: #F5F5F5
+
+/*********************/
+/*       xterm       */
+/*********************/
+
+
+! Use a nice truetype font and size by default... 
+xterm*faceName:  Noto Mono Regular
+xterm*faceSize: 10
+
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+xterm*loginshell: true
+
+! I like a LOT of scrollback...
+xterm*savelines: 16384
+
+! double-click to select whole URLs :D
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! right hand side scrollbar...
+xterm*rightScrollBar: false
+xterm*ScrollBar: false
+
+! stop output to terminal from jumping down to bottom of scroll again
+xterm*scrollTtyOutput: false
+
+!to reincorporate this file in xresources without logging out, issue this cmd:
+!xrdb -merge ~/.Xresources
+
+!#include ".Xresources_molokai"
+#include ".Xresources_light"
+!#include ".Xresources_dark"
+

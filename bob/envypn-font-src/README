@@ -1,0 +1,8 @@
+README
+======
+
+All these *.bdfc files are the 'envypn-font' sources. The font format is
+described in the 'bdfctool' manpage[1]. Caution should be used when
+modifying the files...
+
+[1] https://www.mirbsd.org/htman/i386/man1/bdfctool.htm

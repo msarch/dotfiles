@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Qcad
+GenericName=CAD Software
+Comment=A professional 2D CAD System
+Exec=/home/mi/Dropbox/dot/apps/qcad/qcad %F
+Terminal=false
+X-MultipleArgs=true
+Icon=/home/mi/Dropbox/dot/apps/qcad/qcad_icon.png
+Categories=Graphics;VectorGraphics;Engineering;Construction;2DGraphics;Science;
+MimeType=application/dxf;application/dwg;image/vnd.dxf;image/vnd.dwg;image/x-dwg 
+Name[en_US]=Qcad

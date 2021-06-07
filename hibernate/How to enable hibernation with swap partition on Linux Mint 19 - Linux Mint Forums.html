@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-gb"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>How to enable hibernation with swap partition on Linux Mint 19 - Linux Mint Forums</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Feed - Linux Mint Forums" href="https://forums.linuxmint.com/app.php/feed?sid=8cd65435004bca3a038ea16c4c88c9f2">		<link rel="alternate" type="application/atom+xml" title="Feed - All forums" href="https://forums.linuxmint.com/app.php/feed/forums?sid=8cd65435004bca3a038ea16c4c88c9f2">	<link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="https://forums.linuxmint.com/app.php/feed/topics?sid=8cd65435004bca3a038ea16c4c88c9f2">	<link rel="alternate" type="application/atom+xml" title="Feed - Active Topics" href="https://forums.linuxmint.com/app.php/feed/topics_active?sid=8cd65435004bca3a038ea16c4c88c9f2">	<link rel="alternate" type="application/atom+xml" title="Feed - Forum - Tutorials" href="https://forums.linuxmint.com/app.php/feed/forum/42?sid=8cd65435004bca3a038ea16c4c88c9f2">	<link rel="alternate" type="application/atom+xml" title="Feed - Topic - How to enable hibernation with swap partition on Linux Mint 19" href="https://forums.linuxmint.com/app.php/feed/topic/273202?sid=8cd65435004bca3a038ea16c4c88c9f2">	
+	<link rel="canonical" href="https://forums.linuxmint.com/viewtopic.php?t=273202">
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<link href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/font-awesome.css" rel="stylesheet">
+<link href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/stylesheet_002.css" rel="stylesheet">
+<link href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/stylesheet.css" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/minty/theme/tweaks.css?assets_version=85" rel="stylesheet">
+<![endif]-->
+
+
+<link href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/phpbbads.css" rel="stylesheet" media="screen">
+
+
+
+
+<link rel="preload" href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/integrator.js" as="script"><script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/osd.js"></script><script type="text/javascript" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/integrator.js"></script><link rel="preload" href="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/integrator_002.js" as="script"><script type="text/javascript" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/integrator_002.js"></script></head>
+<body id="phpbb" class="notouch section-viewtopic ltr hasjs">
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+				<a id="logo" class="logo" href="https://forums.linuxmint.com/index.php?sid=8cd65435004bca3a038ea16c4c88c9f2" title="Board index"><span class="site_logo"></span></a>
+				<h1>Linux Mint Forums</h1>
+				<p>Welcome to the Linux Mint forums!</p>
+				<p class="skiplink"><a href="#start_here">Skip to content</a></p>
+			</div>
+
+									<div id="search-box" class="search-box search-header" role="search">
+				<form action="./search.php?sid=8cd65435004bca3a038ea16c4c88c9f2" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" placeholder="Search…">
+					<button class="button button-search" type="submit" title="Search">
+						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+					</button>
+					<a href="https://forums.linuxmint.com/search.php?sid=8cd65435004bca3a038ea16c4c88c9f2" class="button button-search-end" title="Advanced search">
+						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+					</a>
+					<input type="hidden" name="sid" value="8cd65435004bca3a038ea16c4c88c9f2">
+
+				</fieldset>
+				</form>
+			</div>
+						
+			</div>
+					</div>
+				<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu" data-skip-responsive="true">
+			<a href="#" class="dropdown-trigger dropdown-toggle">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>Quick links</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+											<li class="separator"></li>
+																									<li>
+								<a href="https://forums.linuxmint.com/search.php?search_id=unanswered&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://forums.linuxmint.com/search.php?search_id=active_topics&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+							<li>
+								<a href="https://forums.linuxmint.com/search.php?sid=8cd65435004bca3a038ea16c4c88c9f2" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+					
+										<li class="separator"></li>
+
+									</ul>
+			</div>
+		</li>
+
+				<li data-skip-responsive="true">
+			<a href="https://forums.linuxmint.com/app.php/help/faq?sid=8cd65435004bca3a038ea16c4c88c9f2" rel="help" title="Frequently Asked Questions" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+			</a>
+		</li>
+						
+			<li class="rightside" data-skip-responsive="true">
+			<a href="https://forums.linuxmint.com/ucp.php?mode=login&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Login" accesskey="x" role="menuitem">
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>Login</span>
+			</a>
+		</li>
+					<li class="rightside" data-skip-responsive="true">
+				<a href="https://forums.linuxmint.com/ucp.php?mode=register&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>Register</span>
+				</a>
+			</li>
+						</ul>
+
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+				
+		
+		<li class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList" style="max-width: 1187px;">
+
+			
+							<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope=""><a itemprop="item" href="https://forums.linuxmint.com/index.php?sid=8cd65435004bca3a038ea16c4c88c9f2" accesskey="h" data-navbar-reference="index" title="Board index"><i class="icon fa-home fa-fw"></i><span itemprop="name">Board index</span></a><meta itemprop="position" content="1"></span>
+
+											
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="126"><a itemprop="item" href="https://forums.linuxmint.com/viewforum.php?f=126&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Main Edition Support"><span itemprop="name">Main Edition Support</span></a><meta itemprop="position" content="2"></span>
+															
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="42"><a itemprop="item" href="https://forums.linuxmint.com/viewforum.php?f=42&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Tutorials"><span itemprop="name">Tutorials</span></a><meta itemprop="position" content="3"></span>
+							
+					</li>
+
+		
+					<li class="rightside responsive-search">
+				<a href="https://forums.linuxmint.com/search.php?sid=8cd65435004bca3a038ea16c4c88c9f2" title="View the advanced search options" role="menuitem">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+	</div>
+
+		<div class="phpbb-ads-center" style="margin: 10px 0;" data-ad-id="1">
+		<script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/cookie.js"></script><script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/show_ads_impl_fy2019.js" id="google_shimpl"></script><script async="" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/adsbygoogle.js"></script>
+<!-- Forums Top Leaderboard -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3911921815512938" data-ad-slot="4799871663" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:728px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CPmyza6c9OwCFQOehQod6pIIYA" data-load-complete="true" width="728" height="90" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><script type="text/javascript">
+    google_ad_client = "ca-pub-3911921815512938";
+    google_ad_slot = "4799871663";
+    google_ad_width = 728;
+    google_ad_height = 90;
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<script type="text/javascript" id="cookiebanner" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/cookiebanner.js" data-height="30px" data-close-text="OK" data-bg="#91a27f" data-fg="#FFFFFF" data-link="#FFFFFF" data-moreinfo="https://www.linuxmint.com/privacy.php" data-message="By continuing to use this website, you consent to the use of cookies in accordance with our &lt;a href='/privacy.php#cookies-policy'&gt;Cookies Policy.">
+  </script>
+	</div>
+
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" class="page-body" role="main">
+		
+		
+<h2 class="topic-title"><a href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">How to enable hibernation with swap partition on Linux Mint 19</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+<div style="display: none !important;">Write tutorials here<br>
+There are more tutorials here <a href="http://community.linuxmint.com/tutorial/welcome" class="postlink">http://community.linuxmint.com/tutorial/welcome</a><br></div>
+
+	<div class="rules">
+		<div class="inner">
+
+					<strong>Forum rules</strong><br>
+			Please don't add support questions to tutorials,start your own thread
+ in the appropriate sub-forum instead. Before you post please read <a href="http://forums.linuxmint.com/viewtopic.php?f=17&amp;t=83444" class="postlink">this</a>
+		
+		</div>
+	</div>
+
+<div class="action-bar bar-top">
+	
+			<a href="https://forums.linuxmint.com/posting.php?mode=reply&amp;f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="./search.php?sid=8cd65435004bca3a038ea16c4c88c9f2">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…">
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="https://forums.linuxmint.com/search.php?sid=8cd65435004bca3a038ea16c4c88c9f2" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="273202">
+<input type="hidden" name="sf" value="msgonly">
+<input type="hidden" name="sid" value="8cd65435004bca3a038ea16c4c88c9f2">
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			56 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=20" role="button">2</a></li>
+				<li><a class="button" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=40" role="button">3</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=20" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+		</div>
+
+
+
+
+			<div id="p1495203" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495203">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495203">
+
+						<h3 class="first"><a href="https://forums.linuxmint.com/viewtopic.php?p=1495203&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495203">How to enable hibernation with swap partition on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495203&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495203&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495203" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-13T13:21:02+00:00">Fri Jul 13, 2018 9:21 am</time>
+			</p>
+			
+			
+			
+			<div class="content">Hello, <br>
+this howto should help you to set up working hibernation with a <strong class="text-strong">swap partition</strong> on a fresh install of LM19. <br>
+For a guide on howto use a <strong class="text-strong">swap file</strong>, see <a href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=284100" class="postlink">viewtopic.php?f=42&amp;t=284100</a>.<br>
+<br>
+Short background: <br>
+a. Hibernation basically writes the content of your memory into the swap
+ space of your computer - when you start your computer, after 
+hibernation, it should  load/ read the content of the swap partition in 
+order to resume. <br>
+b. There are two different methods to set up a swap-space on your disk. 
+First: The use of a separate swap partition (set up when formatting your
+ disk during install). Second, the use of a swap file (this is the new 
+default). <br>
+c. Hibernation is known to cause problems on some computers. Be sure 
+that you know howto boot and restore your system, before you enable 
+hibernation. It is probably a good idea to have a working usb-stick with
+ Linux Mint 19 around.  <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_biggrin.gif" alt=":D" title="Very Happy" width="15" height="15"> <br>
+<br>
+There may be different reasons, why some users use a separate swap partition. One reason could be that you want to use <strong class="text-strong">btrfs</strong> as a file system (and swap-files on btrfs is a new/experimental feature, that requires a linux kernel 5.0 or newer). <br>
+This howto should guide you, when setting up hibernation <strong class="text-strong">and using a separate swap partition</strong>. <br>
+<br>
+1. Step - Make sure, that the kernel will look at the right place when booting (after hibernation): <br>
+In order to achieve this, one has to add the option "resume=UUID=   " to the file /etc/default/grub<br>
+<br>
+1a. Copy your UUID of the swap partition from fstab: 
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>cat /etc/fstab</code></pre></div>
+
+1b. Add the boot option to grub (your boot loader): 
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>xed admin:///etc/default/grub</code></pre></div>
+Add the following boot option "resume=UUID=putYourSwapUUIDhere" to GRUB_CNMDLINE_LINUX_DEFAULT. <br>
+Example: 
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=putYourSwapUUIDhere"</code></pre></div>
+Note that you have to copy your UUID from fstab to replace putYourSwapUUIDhere.<br>
+<br>
+Save the grub file and update grub: 
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>sudo update-grub</code></pre></div>
+
+2. Now check if hibernation works from the command line:<br>
+Open terminal and run command:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>systemctl hibernate</code></pre></div>
+
+If hibernate works from the command line - but is not visible in the shutdown menu,<br>
+enable it in the menus via the following steps.<br>
+<br>
+3. Enable hibernation in the shutdown menu<br>
+Open terminal and run the following commands to create and edit the configuration file:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>sudo touch /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+xed admin:///etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+</code></pre></div>
+
+When the file opens, copy and paste the following content into the file and save it:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>[Re-enable hibernate by default in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Re-enable hibernate by default in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
+ResultActive=yes</code></pre></div>
+
+Hibernation should show up in the menu and the "Power Management" settings of LM19.<br>
+Comments are welcome.</div>
+
+			
+			
+													<div class="notice">
+					Last edited by <a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=74921&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" style="color: #330066;" class="username-coloured">karlchen</a> on Sat Apr 13, 2019 6:28 am, edited 8 times in total.
+					<br><strong>Reason:</strong> <em>title: corrected "partion" to read "partition</em>				</div>
+			
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+				
+			<div id="p1495233" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495233">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a>							</dt>
+
+						<dd class="profile-rank">Level 20<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 20" title="Level 20"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235149&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">10999</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jun 21, 2018 5:11 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495233">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495233&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495233">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495233&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495233&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495233" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a></strong> » </span><time datetime="2018-07-13T13:51:10+00:00">Fri Jul 13, 2018 9:51 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">goebbe</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495203&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495203" data-post-id="1495203" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 9:21 am</div></cite>
+Comments are welcome.
+</div></blockquote>
+
+You should really use xed admin://&lt;/path/file&gt;, there's no reason 
+to run the editor itself with elevated privileges. Also sudo with GUI 
+programs is just generally bad practice and can lead to issues in some 
+cases.<br>
+<br>
+Otherwise looking good, although hibernation had to be disabled in Mint 
+19 because it is really problematic with the Ubuntu 18.04 base, so good 
+luck to those trying it.</div>
+
+			
+			
+													<div class="notice">
+					Last edited by <a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a> on Sun Aug 05, 2018 11:17 am, edited 1 time in total.
+									</div>
+			
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495260" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495260">
+			<dt class="has-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="avatar"><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/86f4dc60e5bbdf75d22a70523c121db6.jpeg" alt="User avatar" width="120" height="120"></a>														</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">catweazel</a>							</dt>
+
+						<dd class="profile-rank">Level 19<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 19" title="Level 19"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=97513&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9884</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Oct 12, 2012 9:44 pm</dd>		
+		
+											<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Australian Antarctic Territory</dd>
+							
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495260">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495260&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495260">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495260&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495260&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495260" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">catweazel</a></strong> » </span><time datetime="2018-07-13T14:33:54+00:00">Fri Jul 13, 2018 10:33 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">goebbe</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495203&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495203" data-post-id="1495203" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 9:21 am</div></cite>
+c. Hibernation is known to cause problems on some computers.
+</div></blockquote>
+
+The only thing I would suggest is that you add a small section on how to
+ test if hibernate is supported on a particular machine. See, for 
+example: <a href="http://ubuntuhandbook.org/index.php/2017/10/enable-hibernate-ubuntu-17-10/" class="postlink">http://ubuntuhandbook.org/index.php/201 ... ntu-17-10/</a> as there's no point if hibernation isn't supported.</div>
+
+			
+			
+									
+									<div id="sig1495260" class="signature">"There is, ultimately, only one truth -- cogito, ergo sum -- everything else is an assumption." - Me, my swansong.</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495276" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495276">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495276">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495276&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495276">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495276&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495276&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495276" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-13T14:53:54+00:00">Fri Jul 13, 2018 10:53 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote class="uncited"><div>The only thing I
+ would suggest is that you add a small section on how to test if 
+hibernate is supported on a particular machine. See, for example: <a href="http://ubuntuhandbook.org/index.php/2017/10/enable-hibernate-ubuntu-17-10/" class="postlink">http://ubuntuhandbook.org/index.php/201 ... ntu-17-10/</a> as there's no point if hibernation isn't supported.</div></blockquote>
+
+Thank you!<br>
+<br>
+Is there a good way to check if hibernation is supported?  <br>
+The only suggestion is to search in the internet for bug reports. <br>
+However this is likely to give false results, since hibernation depends 
+on the version of the kernel, the version of the driver, the 
+configuration, the implementation details. <br>
+<br>
+In the end it always comes down to trial an error - which is basically 
+what is suggested in your link: "sudo pm-hibernate" &lt;- the equivalent
+ to "sudo systemctl hibernate" in step 2. <br>
+However if one does not implement step 1 - hibernation will always fail. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_smile.gif" alt=":-)" title="Smile" width="15" height="15"></div>
+
+			
+			
+													<div class="notice">
+					Last edited by <a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a> on Fri Jul 13, 2018 10:56 am, edited 1 time in total.
+									</div>
+			
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495279" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495279">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495279">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495279&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495279">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495279&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495279&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495279" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-13T14:54:58+00:00">Fri Jul 13, 2018 10:54 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">gm10</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495233&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495233" data-post-id="1495233" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 9:51 am</div></cite>
+You should really use xed admin://&lt;/path/file&gt;, there's no reason 
+to run the editor itself with elevated privileges. Also sudo with GUI 
+programs is just generally bad practice and can lead to issues in some 
+cases.
+</div></blockquote>
+
+Thank you! I edited my little howto, as suggested. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_smile.gif" alt=":-)" title="Smile" width="15" height="15"></div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495282" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495282">
+			<dt class="has-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="avatar"><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/86f4dc60e5bbdf75d22a70523c121db6.jpeg" alt="User avatar" width="120" height="120"></a>														</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">catweazel</a>							</dt>
+
+						<dd class="profile-rank">Level 19<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 19" title="Level 19"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=97513&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9884</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Oct 12, 2012 9:44 pm</dd>		
+		
+											<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Australian Antarctic Territory</dd>
+							
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495282">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495282&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495282">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495282&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495282&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495282" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">catweazel</a></strong> » </span><time datetime="2018-07-13T14:58:09+00:00">Fri Jul 13, 2018 10:58 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">goebbe</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495276&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495276" data-post-id="1495276" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 10:53 am</div></cite>
+Is there a good way to check if hibernation is supported?  <br>
+The only suggestion is to search in the internet for bug reports. 
+</div></blockquote>
+
+It's in the link I gave you. Step 1...<br>
+
+<blockquote class="uncited"><div>In the end it always comes down to trial an error</div></blockquote>
+
+No, it does not.<br>
+
+<blockquote class="uncited"><div>which is basically what is suggested in your link: "sudo pm-hibernate" </div></blockquote>
+
+An explicit step is not trial and error, it's a test or check. 
+Nevertheless, if it's the same step as you say then leave it. No 
+worries.</div>
+
+			
+			
+									
+									<div id="sig1495282" class="signature">"There is, ultimately, only one truth -- cogito, ergo sum -- everything else is an assumption." - Me, my swansong.</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495287" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495287">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a>							</dt>
+
+						<dd class="profile-rank">Level 20<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 20" title="Level 20"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235149&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">10999</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jun 21, 2018 5:11 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495287">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495287&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495287">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495287&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495287&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495287" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a></strong> » </span><time datetime="2018-07-13T15:05:33+00:00">Fri Jul 13, 2018 11:05 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=97513&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">catweazel</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495282&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495282" data-post-id="1495282" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 10:58 am</div></cite>An explicit step is not trial and error, it's a test or check. </div></blockquote>
+
+That really is exactly the same thing. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_wink.gif" alt=";)" title="Wink" width="15" height="15"><br>
+<br>
+OP, one more: sudo systemctl hibernate -- there's no reason to sudo that
+ one, either. Don't be so generous with your sudo. Elevated privileges 
+should be given sparingly. A program that runs elevated basically owns 
+your system. Never forget. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_wink.gif" alt=";)" title="Wink" width="15" height="15"></div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1495412" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1495412">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1495412">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1495412&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495412">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1495412&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1495412&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495412" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-13T18:49:47+00:00">Fri Jul 13, 2018 2:49 pm</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote class="uncited"><div>OP, one more: 
+sudo systemctl hibernate -- there's no reason to sudo that one, either. 
+Don't be so generous with your sudo. Elevated privileges should be given
+ sparingly. A program that runs elevated basically owns your system. 
+Never forget. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_wink.gif" alt=";)" title="Wink" width="15" height="15">
+</div></blockquote>
+Good catch! Thank you. I changed the howto.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1497076" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1497076">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">sour_diesel</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=236623&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">16</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jul 16, 2018 10:35 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1497076">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1497076&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497076">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1497076&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1497076&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497076" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">sour_diesel</a></strong> » </span><time datetime="2018-07-16T15:41:08+00:00">Mon Jul 16, 2018 11:41 am</time>
+			</p>
+			
+			
+			
+			<div class="content">I just wanted to say thank you for this post.  Worked perfectly for me!  So glad I decided to visit the Mint Forums today!!<br>
+<br>
+     I recently migrated from Ubuntu to Mint and need hibernation .... 
+can't live without it.  The last part of your post for enabling the 
+hibernation option in the quit menu did not work me.  <br>
+<br>
+<br>
+However this is how I accomplished that:<br>
+<br>
+Use this command in a terminal to create a text file:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code> sudo nano /var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl </code></pre></div>
+
+Copy and paste this into your newly created file, save, and exit.
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>[Re-enable hibernate by default in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Re-enable hibernate by default in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate
+ResultActive=yes
+</code></pre></div>
+
+Restart your computer and then click the Menu / Quit / Hibernate   <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_smile.gif" alt=":)" title="Smile" width="15" height="15"></div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1497102" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1497102">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1497102">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1497102&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497102">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1497102&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1497102&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497102" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-16T16:44:06+00:00">Mon Jul 16, 2018 12:44 pm</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">sour_diesel</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1497076&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497076" data-post-id="1497076" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jul 16, 2018 11:41 am</div></cite>
+Use this command in a terminal to create a text file:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code> sudo nano /var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl </code></pre></div>
+</div></blockquote>
+Thank you!<br>
+xed admin://  can only edit an existing file! So when using xed 
+admin:/// one has to add an additional step, in order to create the 
+file.<br>
+I edited the howto.  <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_smile.gif" alt=":-)" title="Smile" width="15" height="15">   Of course, one can also use the nano editor, as suggested.</div>
+
+			
+			
+													<div class="notice">
+					Last edited by <a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a> on Mon Jul 16, 2018 2:01 pm, edited 1 time in total.
+									</div>
+			
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1497105" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1497105">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a>							</dt>
+
+						<dd class="profile-rank">Level 20<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 20" title="Level 20"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235149&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">10999</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jun 21, 2018 5:11 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1497105">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1497105&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497105">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1497105&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1497105&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497105" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a></strong> » </span><time datetime="2018-07-16T16:54:02+00:00">Mon Jul 16, 2018 12:54 pm</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">goebbe</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1497102&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497102" data-post-id="1497102" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jul 16, 2018 12:44 pm</div></cite>
+<blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">sour_diesel</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1497076&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497076" data-post-id="1497076" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Mon Jul 16, 2018 11:41 am</div></cite>
+Use this command in a terminal to create a text file:
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code> sudo nano /var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl </code></pre></div>
+</div></blockquote>
+Thank you!<br>
+xed admin://  can only edit an existing file! So when using xed 
+admin:/// one has to add an additional step, in order to create the 
+file.<br>
+I edited the howto.  <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_smile.gif" alt=":-)" title="Smile" width="15" height="15">  Or one can use the nano editor, as suggested.
+</div></blockquote>
+
+You can even do it without an editor all in one go:<br>
+
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>sudo bash -c "cat &gt;&gt; /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla &lt;&lt;EOB
+[Re-enable hibernate by default in upower]
+Identity=unix-user:*
+Action=org.freedesktop.upower.hibernate
+ResultActive=yes
+
+[Re-enable hibernate by default in logind]
+Identity=unix-user:*
+Action=org.freedesktop.login1.hibernate;org.freedesktop.login1.handle-hibernate-key;org.freedesktop.login1;org.freedesktop.login1.hibernate-multiple-sessions;org.freedesktop.login1.hibernate-ignore-inhibit
+ResultActive=yes
+EOB"</code></pre></div>
+
+Don't you love Linux?! <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_lol.gif" alt=":lol:" title="Laughing" width="15" height="15"></div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1497609" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1497609">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">sour_diesel</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=236623&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">16</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jul 16, 2018 10:35 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1497609">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1497609&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497609">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1497609&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1497609&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1497609" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=236623&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">sour_diesel</a></strong> » </span><time datetime="2018-07-17T15:56:34+00:00">Tue Jul 17, 2018 11:56 am</time>
+			</p>
+			
+			
+			
+			<div class="content">Indeed I do.  Love Linux sooo much!</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1502745" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1502745">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235774&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">dwisatriow</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235774&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">2</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jul 04, 2018 5:55 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1502745">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1502745&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1502745">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1502745&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1502745&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1502745" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235774&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">dwisatriow</a></strong> » </span><time datetime="2018-07-27T13:45:23+00:00">Fri Jul 27, 2018 9:45 am</time>
+			</p>
+			
+			
+			
+			<div class="content">Hi, i've try
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>systemctl hibernate</code></pre></div>
+but it says "Failed to hibernate system via logind: Sleep verb not supported"<br>
+<br>
+and when i try
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>sudo pm-hibernate</code></pre></div>
+nothing happen.<br>
+<br>
+Then i try run
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>sudo systemctl hibernate</code></pre></div>
+the system off but when i turned it on it doesn't hibernate and there is a javaembeddedframe icon on panel which i can't close.<br>
+<br>
+Can anyone help me?</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1505075" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1505075">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=115984&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">9</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Jun 02, 2013 8:29 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1505075">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1505075&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1505075">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1505075&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1505075&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1505075" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">goebbe</a></strong> » </span><time datetime="2018-07-31T13:37:09+00:00">Tue Jul 31, 2018 9:37 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235774&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">dwisatriow</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1502745&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1502745" data-post-id="1502745" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 27, 2018 9:45 am</div></cite>
+Hi, i've try
+<div class="codebox" translate="no"><p>Code: <a href="#" onclick="selectCode(this); return false;">Select all</a></p><pre><code>systemctl hibernate</code></pre></div>
+but it says "Failed to hibernate system via logind: Sleep verb not supported"
+</div></blockquote>
+
+There are several known possibilities that could lead to this error message:<br>
+1. hibernation might not be supported by your hardware (computer) - did it work before installing Mint 19? <br>
+2. hibernation might not be supported by your Linux kernel - use the standard kernel, if possible.<br>
+3. hibernation is known to cause problems in combination with "secure boot" - disable secure boot if possible.<br>
+   Take care: If you need secure boot e.g. in a dual boot setup, for booting Windows, this is not an option. <br>
+4. make sure that your swap partition is bigger than your memory (RAM). <br>
+<br>
+Please report back, if you find the source of your problem.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1506332" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1506332">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235774&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">dwisatriow</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235774&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">2</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Wed Jul 04, 2018 5:55 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1506332">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1506332&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1506332">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1506332&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1506332&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1506332" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235774&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">dwisatriow</a></strong> » </span><time datetime="2018-08-02T14:51:11+00:00">Thu Aug 02, 2018 10:51 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=115984&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">goebbe</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1505075&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1505075" data-post-id="1505075" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Jul 31, 2018 9:37 am</div></cite>
+There are several known possibilities that could lead to this error message:<br>
+1. hibernation might not be supported by your hardware (computer) - did it work before installing Mint 19? <br>
+2. hibernation might not be supported by your Linux kernel - use the standard kernel, if possible.<br>
+3. hibernation is known to cause problems in combination with "secure boot" - disable secure boot if possible.<br>
+   Take care: If you need secure boot e.g. in a dual boot setup, for booting Windows, this is not an option. <br>
+4. make sure that your swap partition is bigger than your memory (RAM). <br>
+<br>
+Please report back, if you find the source of your problem.
+</div></blockquote>
+
+Thanks for the reply, after considering the risk about enabling 
+hibernation on dual boot system, i think i'm not going to enable it.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1507845" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1507845">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=98424&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">davido_</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=98424&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">15</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sat Oct 27, 2012 7:41 am</dd>		
+		
+											<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Europe, Germany</dd>
+							
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1507845">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1507845&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1507845">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1507845&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1507845&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1507845" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=98424&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">davido_</a></strong> » </span><time datetime="2018-08-05T14:39:38+00:00">Sun Aug 05, 2018 10:39 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">gm10</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1495233&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1495233" data-post-id="1495233" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Fri Jul 13, 2018 9:51 am</div></cite>
+Otherwise looking good (if your <a href="https://forums.linuxmint.com/cat%20/etc/initramfs-tools/conf.d/resume" class="postlink">cat /etc/initramfs-tools/conf.d/resume</a>
+ already has the correct UUID then you can skip most of your steps but 
+no matter), although hibernation had to be disabled in Mint 19 because 
+it is really problematic with the Ubuntu 18.04 base, so good luck to 
+those trying it.
+</div></blockquote>
+You're giving a null-info. Tell us, what are the "most" steps to skip?<br>
+<br>
+However, I could not skip any step. After finally adding swap UUID to /etc/default/grub everything works.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1507856" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1507856">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a>							</dt>
+
+						<dd class="profile-rank">Level 20<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 20" title="Level 20"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235149&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">10999</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jun 21, 2018 5:11 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1507856">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1507856&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1507856">Re: Howto enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1507856&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1507856&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1507856" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a></strong> » </span><time datetime="2018-08-05T15:19:02+00:00">Sun Aug 05, 2018 11:19 am</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=98424&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">davido_</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1507845&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1507845" data-post-id="1507845" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Sun Aug 05, 2018 10:39 am</div></cite>
+You're giving a null-info. Tell us, what are the "most" steps to skip?
+</div></blockquote>
+
+Valid point. I simply removed that part from my post. Just follow the 
+OP's good tutorial, no reason to potentially cause confusion with a 
+side-discussion.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1508741" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1508741">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=129035&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">andrekappert</a>							</dt>
+
+						<dd class="profile-rank">Level 1<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/1.gif" alt="Level 1" title="Level 1"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=129035&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">6</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Tue Nov 19, 2013 5:36 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1508741">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1508741&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1508741">Re: How to enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1508741&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1508741&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1508741" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=129035&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">andrekappert</a></strong> » </span><time datetime="2018-08-07T15:47:30+00:00">Tue Aug 07, 2018 11:47 am</time>
+			</p>
+			
+			
+			
+			<div class="content">This will create confusion. The original method 
+speaks of the file 
+“/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla”.
+ The alternative method speaks of the file 
+“/var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl”.
+ Different directory and different extension!<br>
+<br>
+What worked for me: <br>
+if you created the file “/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla”, then delete it.<br>
+Create the file 
+“/var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla”
+ with the new text from sour_diesel Mon Jul 16, 2018 11:41 am.<br>
+<br>
+I have taken the original extension. The extension just describes what 
+sort file it is. I believe that just any file in this sort of directory 
+is parsed, whatever the name is. Why the directory var/lib works and etc
+ not, only an expert will know. Using points in filenames is by the way a
+ weird/dangerous habit. Is the extension part after the first or last 
+point. I thought it would be the last, a filename manipulation function 
+of free pascal thinks the first. In the past, this created a strange 
+error for me.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1509835" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1509835">
+			<dt class="has-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=188299&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="avatar"><img class="avatar" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/Roobarb_Custard_for_Profile_Img_120x120_Update.jpg" alt="User avatar" width="120" height="120"></a>														</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=188299&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">BG405</a>							</dt>
+
+						<dd class="profile-rank">Level 8<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/8.gif" alt="Level 8" title="Level 8"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=188299&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">2382</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Mar 11, 2016 3:09 pm</dd>		
+		
+											<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> England</dd>
+							
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1509835">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1509835&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1509835">Re: How to enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1509835&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1509835&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1509835" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=188299&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">BG405</a></strong> » </span><time datetime="2018-08-09T18:16:51+00:00">Thu Aug 09, 2018 2:16 pm</time>
+			</p>
+			
+			
+			
+			<div class="content"><blockquote><div><cite><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=129035&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">andrekappert</a> wrote: <a href="https://forums.linuxmint.com/viewtopic.php?p=1508741&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1508741" data-post-id="1508741" onclick="if(document.getElementById(hash.substr(1)))href=hash">↑</a><div class="responsive-hide">Tue Aug 07, 2018 11:47 am</div></cite>
+This will create confusion. The original method speaks of the file 
+“/etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla”.
+ The alternative method speaks of the file 
+“/var/lib/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkl”.
+ Different directory and different extension!
+</div></blockquote>
+Well spotted!<br>
+<br>
+It always pays to double-check commands in case anything has been missed
+ off. Seen this in instructions on other websites, one just missing that
+ final / on the path ...</div>
+
+			
+			
+									
+									<div id="sig1509835" class="signature"><span style="font-size:80%;line-height:116%"><span style="color:#4000FF">Dell Inspiron 1525 -</span> <span style="color:#00B000">LM17.3 CE 64</span><span style="color:#E7EFF4">-------------------</span><span style="color:#4000FF">Lenovo T440 8GB -</span> <span style="color:#0090FF">Manjaro KDE </span><span style="color:#00B000">with Mint VMs</span><br>
+<span style="color:#4000FF">Toshiba NB250 -</span> <span style="color:#0090FF">Manjaro KDE</span><span style="color:#E7EFF4">------------------------</span><span style="color:#4000FF">K7S5A AMD 1.2GHz -</span> <span style="color:#9030FF">LM17.3 Xfce 32</span><span style="color:#4000FF"> &amp; </span><span style="color:#BF0040">WinXP-Pro</span><br>
+<span style="color:#4000FF">Acer Aspire E11 ES1-111M -</span> <span style="color:#0090FF">LM18.2 KDE 64</span> <span style="color:#E7EFF4">----</span>Two ROMS don't make a WRITE ...</span></div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+						<div id="p1509839" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile1509839">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a>							</dt>
+
+						<dd class="profile-rank">Level 20<br><img src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/12.gif" alt="Level 20" title="Level 20"></dd>			
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forums.linuxmint.com/search.php?author_id=235149&amp;sr=posts&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">10999</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Thu Jun 21, 2018 5:11 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content1509839">
+
+						<h3><a href="https://forums.linuxmint.com/viewtopic.php?p=1509839&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1509839">Re: How to enable hibernation with swap partion on Linux Mint 19</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forums.linuxmint.com/posting.php?mode=quote&amp;f=42&amp;p=1509839&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://forums.linuxmint.com/viewtopic.php?p=1509839&amp;sid=8cd65435004bca3a038ea16c4c88c9f2#p1509839" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forums.linuxmint.com/memberlist.php?mode=viewprofile&amp;u=235149&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="username">gm10</a></strong> » </span><time datetime="2018-08-09T18:22:03+00:00">Thu Aug 09, 2018 2:22 pm</time>
+			</p>
+			
+			
+			
+			<div class="content">Just do what's written in the OP. No confusion, no problems. <img class="smilies" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/icon_wink.gif" alt=";)" title="Wink" width="15" height="15"></div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+			
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="https://forums.linuxmint.com/posting.php?mode=reply&amp;f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+		
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+
+			<form method="post" action="./viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed">
+				<input type="submit" class="button2" name="sort" value="Go">
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			56 posts
+							<ul>
+		<li class="active"><span>1</span></li>
+				<li><a class="button" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=20" role="button">2</a></li>
+				<li><a class="button" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=40" role="button">3</a></li>
+				<li class="arrow next"><a class="button button-icon-only" href="https://forums.linuxmint.com/viewtopic.php?f=42&amp;t=273202&amp;sid=8cd65435004bca3a038ea16c4c88c9f2&amp;start=20" rel="next" role="button"><i class="icon fa-chevron-right fa-fw" aria-hidden="true"></i><span class="sr-only">Next</span></a></li>
+	</ul>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="https://forums.linuxmint.com/viewforum.php?f=42&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Tutorials”</span>
+		</a>
+	</p>
+	
+		<div class="jumpbox dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+			<span title="Jump to" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+				<span>Jump to</span>
+				<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+			</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																				<li><a href="https://forums.linuxmint.com/viewforum.php?f=9&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Important Notices</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=17&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Rules &amp; Notices</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=143&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Releases &amp; Announcements</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=126&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Main Edition Support</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=90&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Newbie Questions</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=46&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Installation &amp; Boot</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=47&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Software &amp; Applications</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=231&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Virtualization</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=49&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Hardware Support</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=50&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Mounting Partitions</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=51&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Printers &amp; Scanners</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=59&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Graphics Cards &amp; Monitors</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=52&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Networking</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=150&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Ethernet</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=53&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Wireless</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=157&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Other networking topics</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=54&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Desktops &amp; Window Managers</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=208&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Cinnamon</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=206&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; MATE</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=57&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Xfce</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=56&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; KDE</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=147&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Others</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=18&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Other topics</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=6&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Non-technical Questions</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=48&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Sound, Multimedia, &amp; Codecs</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=42&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Tutorials</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=114&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Debian Edition Support</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=244&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; LMDE Forums</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=245&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Newbie Questions</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=246&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Installation &amp; Boot</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=247&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Software &amp; Applications</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=248&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Hardware Support</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=249&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Networking</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=250&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Tutorials</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=251&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Other Topics &amp; Open Discussion</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=235&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; LMDE Archive</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=210&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Personalize and Customize Linux Mint</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=211&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Themes, Icons, &amp; Wallpaper</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=214&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Desktop Screenshots</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=212&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Compiz, Conky, Docks, &amp; Widgets</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=213&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Scripts &amp; Bash</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=4&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Chat</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=180&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Introduce yourself</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=60&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Chat about Linux Mint</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=151&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; About Mint Editions</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=61&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Chat about Linux</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=58&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Open chat</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=225&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Gaming on Linux Mint</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=40&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Development</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=19&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Artwork</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=120&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Community Projects</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=163&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Promotion</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=29&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Suggestions &amp; New Ideas</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=43&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Translations</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=62&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-cat-link"> <span> Languages</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=63&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Français (French)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=64&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Deutsch (German)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=65&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Italiano (Italian)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=68&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Español (Spanish)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=145&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Other Languages</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=67&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Nederlands (Dutch)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=71&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Suomi (Finnish)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=253&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Norsk (Norwegian)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=66&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Polski (Polish)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=72&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Português (Portuguese)</span></a></li>
+																<li><a href="https://forums.linuxmint.com/viewforum.php?f=75&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Русский (Russian)</span></a></li>
+											</ul>
+		</div>
+	</div>
+
+	</div>
+
+
+
+			</div>
+
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="https://forums.linuxmint.com/index.php?sid=8cd65435004bca3a038ea16c4c88c9f2" data-navbar-reference="index" title="Board index"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Board index</span></a></span>					</li>
+		
+				<li class="responsive-menu hidden rightside dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li><li class="rightside">All times are <span title="UTC-4">UTC-04:00</span></li>
+							<li class="rightside">
+				<a href="https://forums.linuxmint.com/ucp.php?mode=delete_cookies&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Delete cookies</span>
+				</a>
+			</li>
+																<li class="rightside" data-last-responsive="true">
+				<a href="https://forums.linuxmint.com/memberlist.php?mode=contactadmin&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" role="menuitem">
+					<i class="icon fa-envelope fa-fw" aria-hidden="true"></i><span>Contact us</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				<p class="footer-row">
+			<span class="footer-copyright">Powered by <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Limited</span>
+		</p>
+						<p class="footer-row" role="menu">
+			<a class="footer-link" href="https://forums.linuxmint.com/ucp.php?mode=privacy&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Privacy" role="menuitem">
+				<span class="footer-link-text">Privacy</span>
+			</a>
+			|
+			<a class="footer-link" href="https://forums.linuxmint.com/ucp.php?mode=terms&amp;sid=8cd65435004bca3a038ea16c4c88c9f2" title="Terms" role="menuitem">
+				<span class="footer-link-text">Terms</span>
+			</a>
+		</p>
+					</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/jquery.js"></script>
+<script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/core.js"></script>
+
+
+
+
+<script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/forum_fn.js"></script>
+<script src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/ajax.js"></script>
+
+
+
+
+
+
+
+<div class="cookiebanner" style="position: fixed; left: 0px; right: 0px; height: 30px; min-height: 21px; z-index: 255; background: rgb(145, 162, 127) none repeat scroll 0% 0%; color: rgb(255, 255, 255); line-height: 21px; padding: 5px 16px; font-family: arial, sans-serif; font-size: 14px; text-align: center; bottom: 0px; opacity: 1;"><div class="cookiebanner-close" style="float: right; padding-left: 5px; cursor: pointer;">OK</div><span>By continuing to use this website, you consent to the use of cookies in accordance with our <a href="https://www.linuxmint.com/privacy.php" target="_blank" rel="noopener noreferrer" style="color: rgb(255, 255, 255); font-weight: normal;">Cookies Policy.</a></span></div><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/ads_002.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_120952810604" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="How%20to%20enable%20hibernation%20with%20swap%20partition%20on%20Linux%20Mint%2019%20-%20Linux%20Mint%20Forums_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-3911921815512938"></iframe></html>

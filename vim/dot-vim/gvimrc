@@ -1,0 +1,23 @@
+
+if has("gui_running")
+  " Gvim
+  if has("gui_gtk2") || has("gui_gtk3")
+    " Linux GUI
+  elseif has("gui_win32")
+    " Win32/64 GVim
+  elseif has("gui_macvim")
+    " MacVim
+    " System gvimrc file for MacVim
+    " remove app 'POMME-S' to save + exit visual mode
+    " this option only works if set in gvimrc NOT virmc
+    macmenu File.Save key=<nop>
+    macmenu File.Save\ All key=<nop>
+    macmenu File.Save\ As\.\.\. key=<nop>
+    inoremap <D-s> <Esc>:w<CR><Esc>
+    noremap  <D-s> <Esc>:w<CR><Esc>
+  else
+    echo "Unknown GUI system!!!!"
+  endif
+else
+  " Terminal vim
+endif

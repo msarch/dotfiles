@@ -1,0 +1,45 @@
+[<0;48;18mq
+shell mount /dev/sda3/ /media/mi/
+shell mkdir /media/mi/Milux
+shell mount /dev/sda3/ /media/mi/Milux
+shell sudo mkdir /media/mi/Milux
+shell sudo mount /dev/sda3/ /media/mi/Milux
+shell sudo mount /dev/sda3 /media/mi/Milux
+search fs
+shell sudo cp fstab fstab.bak
+shell sudo gvim fstab
+shell 
+.jpg
+cd
+renae
+rename
+bulkrename 
+search vim
+shell sudo gvim langdalepl-ubuntu-gvfs-mtp-groovy.list
+shell sudo rm :q
+search gvim
+open_withq
+search gravi
+search wave
+search node
+search mpost
+open_with
+search texlive
+search metapost
+search tex
+rename flower1
+open_with 
+rename flowers
+sudo gvim
+!sudo gvim
+shell sudo gvim
+search meta
+search metafun
+search sci
+search metap
+shell sudo gvim metapost.properties
+rename draw-a-path-from-a-list-of-pairs.mp
+delete
+open_with qpdfview
+
+shell ./vino-server

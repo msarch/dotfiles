@@ -1,0 +1,616 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          vim / msarch@free.fr                               "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TODO : see FIXME
+" TODO : source $VIMRUNTIME/menu.vim
+" TODO : FIXPATH : installation dependant paths to be checked within this file
+
+"----------------------------------- ^ -----------------------------------------
+"{{{   1. --> GENERAL BEHAVIOR
+"------------------------------------------------------------------------------
+
+set nocp
+filetype plugin on                   " now try to detect filetypes
+syntax on                            " syntax highlighing
+filetype plugin indent on            " enable loading indent file for filetype
+set showmode " At least let yourself know what mode you're in
+set backspace+=indent,eol,start
+set langmenu=none
+" By default, pressing <TAB> in command mode will choose the first possible
+" completion with no indication of how many others there might be.
+" The following configuration lets you see what your other options are:
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore=*.o,*.obj,*.bak,*.exe " tab complete now ignores these
+set mouse=a                          " mouse support in Vim when using iTerm 2
+" Disable middle mouse click paste
+map <MiddleMouse> <Esc>
+map! <MiddleMouse> <Esc>
+map <C-z> <Esc>u
+map! <C-z> <Esc>
+
+set vb                               " No bell
+set magic            " allow searching with special characters (ie: newline)
+set incsearch        " jump to search word as you type (annoying but excellent)
+set hlsearch         " Highlight search hits (hl:search/nohlsearch)
+set showcmd                         " Show pending commands
+set ignorecase                      " case insensitive
+set smartcase                       " but use case if any caps used
+" turn off any existing search
+if has("autocmd")
+    au VimEnter * nohls
+endif
+
+
+"------------------------------------------------------------------------------
+" 1.1 : wrap, tab, indent, text width, whitespace
+"------------------------------------------------------------------------------
+
+
+autocmd FileType * set nowrap
+autocmd FileType text,svg set wrap linebreak nolist " Wrap text and svg only
+set expandtab
+set shiftwidth=4                    " Tabs = 4 spaces
+set tabstop=4
+set softtabstop=4
+set smarttab
+set ai "Auto indent
+set si "Smart indent
+" How many tenths of a second to blink when matching brackets
+set mat=2
+" Line at width = 80
+set colorcolumn=81
+" highlight ColorColumn guibg=#141414
+
+
+"}}}---------------------------------------------------------------------------
+"{{{   2. --> Folding / line numbers / parenthesis
+"------------------------------------------------------------------------------
+
+
+set number
+set numberwidth=5
+set foldcolumn=2    " Add a bit extra margin to the left
+"set nofoldenable    " disable folding
+set foldenable    " enable folding
+set foldmethod=marker 
+" To see to it that Vim saves and restores folds when a file is
+" closed and re-opened :
+au BufWinLeave *.py mkview
+au BufWinEnter *.py silent loadview
+"enable space to trigger the fold in normal mode.
+nnoremap <space> za 
+" Extra visual feedback when switching modes
+"-------------------------------------------
+"" change the color of background when you enter insert mode,
+" and when you leave insert mode.
+"au VimEnter * hi Normal guibg=#242424
+"au InsertLeave * hi Normal guibg=#242424
+"au InsertEnter * hi Normal guibg=#000000
+
+
+"}}}---------------------------------------------------------------------------
+"{{{   3. --> Status Line , Window Title           
+"------------------------------------------------------------------------------
+
+
+set laststatus=2                     " statusline always present
+set statusline=%m                    " modified flag
+set statusline+=%{expand(\"%:t:r\")} " filename w/o extension
+set statusline+=%=                   " left right
+"set statusline+=%y                   " filetype
+set statusline+=\ line:\%l/%L
+set ch=1                             " cmd line height
+"set statusline=%t                   " only tail of the filename
+" resize splits dynamically
+"autocmd VimResized * wincmd =       " resize equally all splits if vim resized
+set winminwidth=12                  " split wide enough to read title
+"autocmd BufEnter * resize 56        " resize split on enter
+"au BufEnter * vertical resize 86
+
+" Nice window title
+auto BufEnter * :set title | let &titlestring = 'vim : ' . expand('%')
+" split on right or bottom as default behavior:
+set splitbelow
+set splitright
+
+
+"}}}---------------------------------------------------------------------------
+"{{{   4. --> THEMES
+"------------------------------------------------------------------------------
+
+
+if has("gui_gtk2") || has("gui_gtk3")
+    " Linux GUI
+    set background=light
+    set guifont=Inconsolata\ Medium\ 10
+    
+    try
+		colorscheme PaperColor
+        colorscheme nord
+    catch
+    endtry
+    
+    set lines=48
+    set columns=90
+    
+    winpos 30 20
+    " Remove scrollbars
+    set guioptions-=l
+    set guioptions-=b
+    set guioptions+=r
+    set guioptions-=L
+    "Make GUI File Open use current directory
+    set browsedir=buffer 
+elseif has("gui_win32")
+    " Win32/64 GVim
+elseif has("gui_macvim")
+    " MacVim only
+    try
+        colorscheme PaperColor
+    catch
+    endtry
+    set background=light
+    set transparency=0
+    set printexpr=system('open\ -a\ Preview\ '.v:fname_in)\ +\ v:shell_error
+    set guifont=Roboto\ Mono\ Light\ for\ Powerline:h12
+    set lines=48
+    set columns=90
+    winpos 30 20
+    " Remove scrollbars
+    set guioptions-=l
+    set guioptions-=b
+    set guioptions-=r
+    set guioptions-=L
+    "Make GUI File Open use current directory
+    set browsedir=buffer
+else
+  " Terminal vim
+    try
+        " colorscheme PaperColor 
+        colorscheme nord
+    catch
+    endtry
+    " highlight Normal ctermfg=145 ctermbg=none guifg=#ABB2BF guibg=#1c1c1c
+    " change the color just for the end of the buffer 
+    highlight EndOfBuffer ctermfg=black ctermbg=black
+endif
+
+
+
+" }}} -------------------------------------------------------------------------
+"{{{   5. --> MENUS for gui vim
+"------------------------------------------------------------------------------
+
+
+if has("gui_running")
+  " Gvim
+    "------
+    set guioptions +=m  "menus ON
+    set guioptions -=T  "toolbar OFF
+
+
+    menu Utils.Make\ Session <ESC>:mksession! ~/.vim/session<cr>
+    menu Utils.Restore\ Session <ESC>:so ~/.vim/session<cr>
+    menu Utils.Fix\ Buftype <ESC>:set buftype: " "<CR>
+
+    menu Utils.-Sep1-	:  " sep must have a unique name and start/end with - 
+    menu Utils.Substitute\.\.\.  <ESC>:%s/old/new/g<Left><Left><Left><Left><Left><Left>
+    menu Utils.Substitute\ In\ Buffers\.\.\.  <ESC>:bufdo %s/old/new/ge \| update<C-Left><C-Left><Left><Left><Left><Left><Left><Left><Left>
+
+    menu Utils.-Sep2- :
+    "macOSX 
+    "menu Utils.Show\ Vimrc  <ESC>:e /Applications/MacVim.app/Contents/Resources/vim/vimrc<CR>
+    "menu Utils.Show\ GVimrc  <ESC>:e /Applications/MacVim.app/Contents/Resources/vim/gvimrc<CR>
+    menu Utils.Show\ Vimrc  <ESC>:e ~/.vim/vimrc<CR>
+    menu Utils.Show\ GVimrc  <ESC>:e ~/.vim/gvimrc<CR>
+    menu Utils.Show\ FullPath  <ESC>:echo expand('%:p')<CR>
+    menu Utils.Show\ In\ Finder  <ESC>:silent Shell open %:h<CR><C-W>c
+    menu Utils.-Sep3- :	
+    menu Utils.Write\ With\ Sudo  <ESC>:w !sudo tee %
+    menu Utils.Wrap\ To\ TextWidth  <ESC>:g/^/norm gww<CR>
+    
+    menu Window.-Sep4- :	
+    menu Window.Goyo\ Toggle <ESC>:Goyo<CR>
+    menu Window.-Sep4- :	
+    menu Window.Light\ Theme <ESC>:set background=light<CR>:colorscheme mayansmoke<CR>
+    menu Window.Dark\ Theme <ESC>:set background=dark<CR>:colorscheme nerv-ous<CR>
+   
+    menu Notes.Show\ All\  <ESC>:e /home/mi/Dropbox/notebook<CR>
+    menu Notes.Search\ for\.\.\.\  <ESC>:Notes<CR>
+    menu Notes.New\ Note <ESC>:e /home/mi/Dropbox/notebook<CR>
+    menu Notes.Insert\ Vim\ Asciidoc\  <ESC>i// vim: set syntax=asciidoc:
+    menu Notes.Insert\ Link\ To\ File  <ESC>i.///  (vim : gf)<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+    menu Notes.asciidoc2html\  <ESC>:!asciidoc -a data-uri -a toc -a max-width=55em -o ~/Downloads/"%:r".html "%"<CR>
+    menu Notes.asciidoc2pdf\   <ESC>:!asciidoctor-pdf -a pdf-stylesdir=/home/mi/Dropbox/wip/dev/asciidoc -a pdf-style=basic -o ~/Desktop/"%:r".pdf "%"<CR>
+    menu Notes.asciidoc2pdf\.\.\.\  <ESC>:!asciidoctor-pdf -a pdf-stylesdir=/home/mi/Dropbox/wip/dev/asciidoc -a pdf-fontsdir=/home/mi/Dropbox/wip/dev/asciidoc -a pdf-style=facture -o ~/Desktop/"%:r".pdf "%"
+    
+    menu Python.Python\ Run       <ESC>:Shell python3 <C-R>=expand('%:p')<CR><CR>
+    menu Python.Python\ Run\.\.\. <ESC>:Shell python3 <C-R>=expand('%:p')<CR>
+    menu Python.SNIPPETS\  :e /home/mi/Dropbox/notebook/dev-python-snippets.py<CR>
+    menu Python.Pychecker <ESC>:Shell pychecker %<cr>
+    menu Python.Pep-8 <ESC>:call Flake8() %<cr>
+    menu Python.FixTabs <ESC>:ret<cr>
+
+    menu Processing.Processing\ Run <F5>
+    menu Processing.SNIPPETS\  :e /home/mi/Dropbox/notebook/dev-java-snippets.java<CR>
+    menu Processing.Reference <ESC>:Shell chromium --new-window https://processing.org/reference/ <CR>
+endif
+
+
+"}}}--------------------------------------------------------------------------
+"{{{   6. --> Files and backups
+"-----------------------------------------------------------------------------
+
+
+set encoding=utf-8
+set cryptmethod=blowfish2
+set nobackup                         " Turn backup off
+set nowritebackup
+set noswapfile
+"set viminfo=                        
+" supress vim info file (for better security but used by startitfy )
+set autowrite                        " write before hiding a buffer
+autocmd BufEnter * lcd %:p:h         " sets working dir to current file's dir
+set autochdir
+" allows markdown recognition for .md extension
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc
+"remove trailing whitespaces on save of python files
+autocmd BufWritePre *.py %s/\s\+$//e
+" save as you write : see Autosave plugin section
+"
+"
+"}}}--------------------------------------------------------------------------
+"{{{   7. --> KEY MAPPINGS
+"-----------------------------------------------------------------------------
+
+nnoremap mm :! make<cr>
+
+" COPY PASTE CUT with Ctrl !!!!!
+" ------------------------------
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> <ESC>"+p
+imap <C-v> <ESC>"+pa
+
+" double click toggles insert mode
+noremap  <2-Leftmouse> <Esc>i
+imap  <2-Leftmouse> <Esc>
+" close the quickfix-window
+nnoremap <buffer><silent> q :cclose<CR>
+nnoremap qq :Bdelete<CR>
+nnoremap Q :q!<CR>
+nnoremap w :w<CR>
+nnoremap wq :wq<CR>
+nnoremap bd :bd<CR>
+vnoremap yy "+y
+nnoremap pp "+p
+"goto url with browser
+nnoremap gx :call HandleURL()<CR>
+
+" Extra navigation commands
+"--------------------------
+
+" tabs to navigate buffers in normal mode
+noremap <S-tab> :bp!<cr>
+noremap <tab> :bn!<cr>
+" tab at beginning of line / auto completion if not at beginning
+" maj tab to undo
+inoremap <S-Tab> <c-n>
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+" maj ctrl arrows to move through splits
+nnoremap <C-DOWN> <C-W><C-J>
+nnoremap <C-UP> <C-W><C-K>
+nnoremap <C-RIGHT> <C-W><C-L>
+nnoremap <C-LEFT> <C-W><C-H>
+" in normal mode : move current line with maj-up and maj-down
+nnoremap <S-Down> 10<C-D>
+nnoremap <S-Up> 10<C-U>
+
+" Visual mode related
+"--------------------
+
+vnoremap <S-Up> :m'<-2<cr>`>my`<mzgv`yo`z
+vnoremap <S-Down> :m'>+<cr>`<my`>mzgv`yo`z
+" move visual selection with maj-left and maj-right
+vnoremap <S-Right> lholhxp`[1v
+vnoremap <S-Left> hlohlxhP`[1v
+" Visual mode ==  replaces the current selection with...
+vnoremap == "hy:%s/<C-r>h//gc<left><left><left>
+
+" leader commands  leader = ,
+"----------------------------
+
+let mapleader=","
+" shortcuts for menu items
+noremap <leader>nl :e ~/Milux/notebook<CR>
+noremap <Leader>ns :Notes<CR>
+noremap <leader>nt :e ~/Milux/notebook<CR>/
+" each buffer to new tab
+noremap <leader>e :tab sball<CR>
+" open with finder
+nnoremap <leader>o :silent Shell open %:h<CR><C-w>c
+
+" quickfix window
+nnoremap <leader><up> :copen<CR>
+nnoremap <leader><down> :cclose<CR>
+nnoremap <leader><left> :cprevious<CR>
+nnoremap <leader><right> :cnext<CR>
+
+" select the word under cursor
+noremap <leader>w viw
+" delete word under cursor and insert
+noremap <leader>x viwc       
+" delete line and insert on the same empty line
+noremap <leader>d 0v$c<CR><UP>
+
+"                               4. DEV SECTION
+
+
+"ANY filetype 'run' ; see RunMe function
+noremap <leader>r <ESC>:RunMe<CR>
+" shell script run
+"autocmd! BufEnter *.sh noremap <leader>r <ESC>:!./%<cr>
+" Python run:                                  <cmd> r
+"autocmd! BufEnter *.py noremap <leader>r <ESC>:Shell python %<cr>
+ 
+"}}}---------------------------------------------------------------------------
+"{{{   8. --> PLUGINS SECTION
+"------------------------------------------------------------------------------
+
+" Ack / ag
+"------------
+let g:ackhighlight = 1    " highlight of the searched term in results and files
+let g:ack_autoclose = 1          " close the quickfix window after any shortcut
+let g:ack_autofold_results = 0                " no fold will be open by default
+let g:ack_mappings = { "o": "<CR>zz" }    " open result in middle of the screen
+let g:ackpreview = 0 " automagically open the file with 'j' or 'k', up and down
+
+" Predicate for whether mappings are enabled for list type of current search.
+function! s:UsingListMappings() "{{{
+  if s:UsingLocList()
+    return g:ack_apply_lmappings
+  else
+    return g:ack_apply_qmappings
+  endif
+endfunction "}}}
+
+"You can use Ag with Ack plugin as well.
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+    endif
+
+" Autosave
+"------------
+" AutoSave is disabled by default,enabled it  with 
+let g:auto_save = 0    
+
+" Buffet :
+"------------
+noremap <silent>bb :Bufferlist<cr>
+
+" Flakes8
+"------------
+let g:PyFlakeCheckers = 'pep8,mccabe' "List of checkers used
+
+" netrw
+"------------
+let g:netrw_liststyle     = 6  " version detailed view
+let g:netrw_banner        = 0
+let g:netrw_hide          = 1  " hide hidden files
+"let g:netrw_list_hide     = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide     = '.*\.swp$,.*\.pyc, *\.DS_Store, .git, .gitignore'
+
+"let g:netrw_sort_sequence = '[\/]$,*' " directories on the top, files below
+"let g:netrw_altv          = 1
+"let g:netrw_fastbrowse    = 2
+"let g:netrw_keepdir       = 0
+"let g:netrw_retmap        = 1
+"let g:netrw_silent        = 1
+"let g:netrw_special_syntax= 1
+let g:netrw_browse_split  = 4
+"  *g:netrw_browse_split*
+ "when browsing, <cr> will open the file by:
+    "=0: re-using the same window
+    "=1: horizontally splitting the window first
+    "=2: vertically   splitting the window first
+    "=3: open file in new tab
+    "=4: act like "P" (ie. open previous window)
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Explore /Users/MS | endif
+"nnoremap - <ESC>:Lex .<CR>
+
+" NerdCommenter :
+"------------
+
+" NERDTree
+"------------
+let NERDTreeQuitOnOpen  = 1
+let NERDTreeHijackNetrw = 1 " NERDTree will override Netrw
+let g:NERDTreeChDirMode = 2
+nnoremap <SPACE><SPACE> :NERDTreeToggle<CR>
+
+" PyFlakes
+"------------
+"let g:pyflakes_use_quickfix = 0 " tell it not use the quickfix window:
+
+" Startify
+"------------
+"nnoremap <silent><SPACE><SPACE> :Startify<CR>
+nnoremap <silent>$$ :Startify<CR>
+let g:startify_update_oldfiles = 1
+"let g:startify_list_order = ['files', 'dir', 'bookmarks', 'sessions']
+" A list of files or directories to bookmark. The list can contain two kinds of
+" types. Either a path or a dictionary whereas the key is the custom index and
+" the value the path.
+" Example
+"       let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc' ]
+let g:startify_bookmarks = [{'a': '/home/mi/Dropbox/notebook/alpha'},{'g': '/home/mi/Dropbox/wip/git/'},{'d': '/home/mi/Dropbox/wip/dev/'},{'h': '~/'},{'n': '/home/mi/Dropbox/notebook/'},{'v': '~/.vim/vimrc'}]
+let g:startify_custom_header = []
+
+" Tagbar
+"-------
+"nnoremap tt :TagbarToggle<CR>
+
+" Vim-Airline
+"------------
+let g:airline_theme='papercolor'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#exclude_preview = 0
+let g:airline#extensions#tabline#show_splits = 0
+" configure collapsing parent directories in buffer name. >
+let g:airline#extensions#tabline#fnamecollapse = 1
+" configure the formatting of filenames (see |filename-modifiers|). >
+let g:airline#extensions#tabline#fnamemod = ':t:.'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" enable/disable tagbar integration >
+let g:airline#extensions#tagbar#enabled = 1
+
+
+"}}}---------------------------------------------------------------------------
+"{{{   9. --> Helpers functions
+
+
+" shortcut to terminal
+"----------------
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline) abort
+    exe 'vert terminal '. a:cmdline
+endfunction
+
+
+" shortcut to url
+"----------------
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+"    silent exec "!open '".s:uri."'"
+    silent exec "!chromium '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+
+"FIXME document me ?
+"  ----------------------------
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+" FIXME document me ?
+"  --------------------------------
+function! s:RunShellCommand(cmdline)
+  let isfirst = 1
+  let words = []
+  for word in split(a:cmdline)
+    if isfirst
+      let isfirst = 0  " don't change first word (shell command)
+    else
+      if word[0] =~ '\v[%#<]'
+        let word = expand(word)
+      endif
+      let word = shellescape(word, 1)
+    endif
+    call add(words, word)
+  endfor
+  let expanded_cmdline = join(words)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  silent execute '$read !'. expanded_cmdline
+  1
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+
+
+" Clean end of line white spaces
+"-------------------------------
+function! StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+command! Strip call StripTrailingWhitespaces()
+
+
+" Notebook system
+"----------------
+function! MyNotes()
+  let term = input("Search term or 'enter': ")
+  if !empty(term)
+    " if you  don't want to jump to the first result automatically.
+    " Use :Ack!, with bang
+    execute 'Ack' term '/home/mi/Dropbox/notebook/*'
+  else
+    " Empty search term
+    :e /home/mi/Dropbox/notebook
+  endif
+  redraw!
+endfunction
+command! Notes call MyNotes()
+
+" FIXME
+" Run button
+"-----------
+function! RunMe()
+    if &filetype == "python"
+        :Shell python %:p
+
+    elseif &syntax == "processing"
+        :! processing-java --sketch=%:p:h  --run
+
+    elseif &syntax == "sh"
+        :!./%
+
+    elseif &syntax== "asciidoc"
+        "default to html
+        ":!asciidoc -a data-uri -a toc -a max-width=55em -o ~/"%:r".html "%"<CR>
+        "default to pdf
+        ":!asciidoctor-pdf -o ~/"%:r".pdf "%"
+        "pdf custom stylesheet : mi
+        :!asciidoctor-pdf -a pdf-stylesdir=/home/mi/Dropbox/wip/git/asciidoc -a pdf-style=basic -o ~/Downloads/"%:r".pdf "%"
+
+    else
+        echo "! no 'run' command has been set for current filetype..." 
+    endif 
+endfunction
+command! RunMe call RunMe()
+
+" FIXME
+" CheatSheet button
+"------------------
+function! HelpMe()
+    if &filetype == "python"
+        ":e /home/mi/Dropbox/wip/git/pyref/snippets.py
+        :botright vs /home/mi/Dropbox/wip/git/pyref/snippets.py
+    elseif &syntax == "openscad"
+        ":e /home/mi/Dropbox/wip/git/things/cheat-sheet.scad
+        :botright vs ~/it/things/cheat-sheet.scad
+
+    elseif &syntax == "sh"
+        echo "! no 'cheat sheet' has been set for current filetype..."
+
+    elseif &syntax== "asciidoc"
+        ":e ~/Milux/notebook/Asciidoc.txt
+        :botright vs ~/Milux/notebook/Asciidoc.txt
+
+    else
+        echo "no 'cheat sheet' has been set for current filetype..."
+
+    endif 
+endfunction
+command! HelpMe call HelpMe()
+
+
+"}}}---------------------------------------------------------------------------
+"---------------------------------- end ---------------------------------------
+
+
